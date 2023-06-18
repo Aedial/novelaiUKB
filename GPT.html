@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>GPT</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<p>Science fiction has us think of <a href="https://en.wikipedia.org/wiki/Artificial_intelligence"><strong>artificial intelligence</strong></a> as something for robots and alien spaceships, but the reality is very different. In this context, an artificial intelligence is quite unlike the <em>natural intelligence</em> exhibited by humans.</p>
+<p>The phrase that conjures thoughts of robotic assassins and intelligent holographic people is actually <a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence"><strong>artificial general intelligence</strong></a>, or <strong>AGI</strong>.</p>
+<p>The eponymous AI that <em>NovelAI</em> uses is a a lot of different technical terms put together: An <strong>Autoregressive Language Model and Generative Pre-trained Transformer</strong>.</p>
+<h3 id="what-does-gpt-mean">What does GPT mean?</h3>
+<p>Let us vulgarize this a little. This will be an oversimplification of sorts, if you're really interested, you should go ahead and consult Wikipedia's page on <a href="https://en.wikipedia.org/wiki/GPT-3">GPT-3</a>.</p>
+<ul>
+<li><strong>Autoregressive</strong> means what the AI gives you is based on what information you fed into it, <em>and</em> a random element.</li>
+<li><strong>Language Models</strong> are AIs designed to replicate human language for various use cases, such as autocorrection, text prediction, composing letters, writing advertisement, etc.</li>
+<li><strong>Generative Pre-trained</strong> (yes, both at once) mean that the AI is first trained by making it read a lot of text. Then, a sample of the text is shown to the AI, and it is asked what is supposed to appear after it. Its performance is measured on how well it managed to "guess" the follow-up text, although some randomness or "loss" is useful as it gives it creativity.</li>
+<li><a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)"><strong>Transformer</strong></a> means that the AI processes the entire input text at once, and lends different weight to different content, instead of reading things one word at a time. This allows for faster and more efficient training for language models.</li>
+</ul>
+<hr />
+<h3 id="what-does-this-imply">What does this imply?</h3>
+<p><strong>No, you are not talking to a machine with thoughts and feelings</strong>.</p>
+<p>While <em>NovelAI</em> is very advanced, it is purely designed as a literature generation service. At times, you may feel like the AI understands you, and it may even seem emotional. This is it performing a very convincing facsimile of human literature - exactly what it was designed to do.</p>
+<p>The AI is only capable of producing text that looks convincingly human, without understanding language on its own.</p>
+<p>As such, <em>NovelAI</em> has no understanding of morality, or the fundamental rules of grammar, or even prejudices and biases carried by humankind as a whole. Please keep this in mind when experiencing the narratives presented in your Stories, and remember you can always ban certain tokens from appearing.</p>
+<h3 id="parameters">Parameters</h3>
+<p>Think of an AI like a human brain. Inside the brain, you find <em>neurons</em>, and those <em>neurons</em> are connected by <em>synapses</em>.</p>
+<p>The number of parameters is the number of <em>synapses</em>. It's a measure of the <strong>density</strong> of the neural network's connections. The denser it is, the richer the connections, and the broader the scope of the AI's creativity. (Theoretically. Recent developments have shown that this is a tendency but not a guarantee, hence Clio's potential in spite of its small size.)</p>
+<p>The model is, in reality, a <a href="https://en.wikipedia.org/wiki/Vector_space"><strong>vector space</strong></a> and each parameter is a set of <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic"><strong>floating point numbers</strong></a> that constitutes a vector. Each Vector is a connection between tokens, and that network of vectors is an attempt to represents human language mathematically.</p>
+<p>A model with more parameters takes <strong>considerably</strong> more Video Memory on the machine's hardware, but is capable of greater creativity and more 'natural' language.</p>
+<p>Why Video Memory? Simple: CPUs perform operations linearly, and vector math is costly. GPUs are made to calculate lighting quickly, among other things. As it turns out, calculating raytraces for lighting in a 3d environment gets pretty close to what you need to run an AI, and GPUs are also designed to run lots of tasks in parallel.</p>
+<hr />
+<h2 id="tokens">Tokens</h2>
+<p>The AI interprets text by converting it to <a href="https://en.wikipedia.org/wiki/Lexical_analysis#tokenization"><strong>tokens</strong></a>. <strong>Tokens</strong> are how the AI sees pieces of text. Much like <a href="https://en.wikipedia.org/wiki/Morpheme">morphemes</a>, tokens are combined to form words or sentences. Because the AI has no judgment of its own, it relies on evaluating the relationships between tokens based on its training data, then determining the most likely token to come next in the sequence.</p>
+<p>Think of it as a huge game of probabilities. There is no winner, but there are <em>more likely</em> answers, and the AI picks from those.</p>
+<p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/c7da11f4-0f02-4a54-97f3-ced9e4a25cf0" alt="image" /></p>
+<p>For example, a <strong>raincoat</strong> is composed of two tokens - the token for <strong>rain</strong> and the token for <strong>coat</strong>. When put together, the AI recognizes the pattern as <strong>raincoat</strong>, and evaluates its training material to figure out what tokens are associated with <strong>raincoat</strong>. Not all tokens are whole words - some tokens are as simple as punctuation marks, spaces, and even partial words like <strong>mah</strong>.</p>
+<p>Because the AI is quite powerful, it's capable of evaluating patterns with up to thousands of tokens in total. When you hit <strong>Send</strong>, the <strong>Current Context</strong> is fed to the AI as tokens, the AI estimates the most likely next word in the sequence, then repeats the process until the Generation is returned.</p>
+<p><em>NovelAI</em> works by identifying links between tokens, thus, <strong>including a token will cause it to have a higher chance of appearing</strong>. This means that writing <code>John cannot see.</code>, a <em>negative</em>, will cause the AI to still consider <code>see</code> as a possibility.</p>
+<p>This is similar to <a href="https://en.wikipedia.org/wiki/Ironic_process_theory">ironic process theory</a>. Instead, you should phrase <em>positively</em> - <code>John is blind.</code> - where possible.</p>
+<h3 id="tokenizer-tool">Tokenizer Tool</h3>
+<p><em>NovelAI</em> includes a built-in Tokenizer <a href="Tools.html">Tool</a> that allows you to see not only the breakdown of tokens used in an input, but also the token IDs, token count, and character count. This tool is accessed through the main menu, or by clicking on the token count of Memory, Author's Note or Lorebook entries.</p>
+</body>
+</html>
