@@ -13,8 +13,113 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
+  <style>
+  body {
+    padding-left: 1cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  nav {
+    width: 1em;
+    margin-left: -1cm;
+    font-size: smaller;
+    color: grey;
+    transition: 0.5s;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav a, nav a:visited {
+    color: grey;
+  }
+  nav h2:before {
+    content: "≡ ";
+    font-size: 150%;
+  }
+  nav h2:after {
+    content: " ◂";
+  }
+  nav li {
+    margin-left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  nav li > a:not(:only-child):before {
+    content: "▸ ";
+  }
+  nav li > a:only-child {
+    margin-left: 0.75em;
+  }
+  nav li li {
+    margin-left: 1em;
+  }
+  nav li li li {
+    margin-left: 0.5em;
+    font-size: smaller;
+  }
+  nav ul li ul  {
+    visibility: hidden;
+    display: none;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    transition: 0.5s;
+  }
+  .paddingleft {
+    padding-left: 9cm;
+    transition: 0.5s;
+  }
+  .navside {
+    width: 7cm;
+    margin-left: -8.5cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  .navside h2:after {
+    content: " ▸";
+  }
+  .navshown {
+    width: 50%;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .subShow > ul {
+    visibility: visible;
+    display: block;
+    transition: 0.5s;
+    margin-left: -1em;
+  }
+  .subShow > a:not(:only-child):before {
+    content: "▾ ";
+  }
+  </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#what-is-a-narrative-example">What is a narrative example?</a>
+<ul>
+<li><a href="#a-word-of-caution-on-token-budget">A word of caution on token budget</a></li>
+</ul></li>
+<li><a href="#step-1-identify-our-characters-special-characteristics">Step 1. Identify our character's special characteristics.</a></li>
+<li><a href="#step-2-test-how-the-ai-portrays-the-character">Step 2: Test how the AI portrays the character.</a></li>
+<li><a href="#step-3-write-the-narrative-example-scene">Step 3: Write the narrative example scene.</a></li>
+<li><a href="#step-4-trim-and-edit-step_4_trim_and_edit">Step 4: Trim and Edit. {#step_4_trim_and_edit.}</a></li>
+<li><a href="#step-5-test-how-the-ai-portrays-the-character-with-the-new-entry">Step 5: Test how the AI portrays the character with the new entry.</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</nav>
 <p><em>Guide written by AlexeiP</em></p>
 <p><em>(Note: This guide is deprecated and kept for historical purposes. The described technique might not work as well with the Clio model)</em></p>
 <h2 id="introduction">Introduction</h2>
@@ -105,5 +210,80 @@ One of the intruders fired at me. I responded by firing a lightning bolt. He fel
 <h2 id="conclusion">Conclusion</h2>
 <p>As we've just seen, writing a lorebook entry in a way that shows the character in action, rather than merely explains who they are, gives the AI a pattern it can learn from, helping it execute any outlandish story idea we can imagine.</p>
 <p>Despite their usefulness, narrative example entries have drawbacks. These include the relatively high number of tokens they use up, and the extra time required to write them. However, when used carefully and sparingly, they can be the magic bullet your story needs. Regardless of whether your main character is a giant kaiju, a tiny mouse, or a self-aware personification of the number Pi, no character idea is too outlandish or silly for NovelAI, as long as it speaks to your imagination as a storyteller.</p>
+
+<!-- Javascript added by toc-css.lua to make TOC expandable on click -->
+<script>
+
+  const b = document.querySelector("body");
+  const n = document.querySelector("nav");
+  const buttonsize = 20;
+
+  // click on "toc-title" to show TOC to the side
+  document.querySelector("#toc-title").addEventListener("click", function(e) {
+    if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+      n.classList.toggle("navshown");
+    } else {
+      b.classList.toggle("paddingleft");
+      n.classList.toggle("navside");
+      n.classList.remove("navshown");
+    };
+  });
+
+  // by default show TOC in large window
+  window.onload = function() {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    };
+  };
+
+  // show/hide TOC on resize
+  window.onresize = function () {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    } else {
+      b.classList.remove("paddingleft");
+      n.classList.remove("navside");
+    };
+  };
+
+  // show/hide subsections
+  const allLis = document.querySelectorAll("nav li");
+
+  for (const li of allLis) {
+    li.addEventListener('click', function (e) {
+      if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+        li.classList.toggle('subShow');
+        e.preventDefault();
+      };
+      if (e.clientX > e.currentTarget.getBoundingClientRect().left + 3*buttonsize) {
+        n.classList.remove("navshown");
+      };
+    });
+  };
+
+  // show full nav on tab, hide full nav on escape
+  document.addEventListener("keydown", function (e) {
+    if (e.which === 27) {
+      n.classList.remove("navshown");
+      e.preventDefault();
+    };
+    if (e.which === 9) {
+      n.classList.add("navshown");
+      e.preventDefault();
+    };
+  });
+
+  // hide full nav when clicked outside
+  document.addEventListener("click", function(e) {
+    if (n.classList.contains("navshown")) {
+      if (!n.contains(e.target)) {
+        n.classList.remove("navshown");
+      };
+    };
+  });
+
+</script>
 </body>
 </html>

@@ -13,8 +13,143 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
+  <style>
+  body {
+    padding-left: 1cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  nav {
+    width: 1em;
+    margin-left: -1cm;
+    font-size: smaller;
+    color: grey;
+    transition: 0.5s;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav a, nav a:visited {
+    color: grey;
+  }
+  nav h2:before {
+    content: "≡ ";
+    font-size: 150%;
+  }
+  nav h2:after {
+    content: " ◂";
+  }
+  nav li {
+    margin-left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  nav li > a:not(:only-child):before {
+    content: "▸ ";
+  }
+  nav li > a:only-child {
+    margin-left: 0.75em;
+  }
+  nav li li {
+    margin-left: 1em;
+  }
+  nav li li li {
+    margin-left: 0.5em;
+    font-size: smaller;
+  }
+  nav ul li ul  {
+    visibility: hidden;
+    display: none;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    transition: 0.5s;
+  }
+  .paddingleft {
+    padding-left: 9cm;
+    transition: 0.5s;
+  }
+  .navside {
+    width: 7cm;
+    margin-left: -8.5cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  .navside h2:after {
+    content: " ▸";
+  }
+  .navshown {
+    width: 50%;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .subShow > ul {
+    visibility: visible;
+    display: block;
+    transition: 0.5s;
+    margin-left: -1em;
+  }
+  .subShow > a:not(:only-child):before {
+    content: "▾ ";
+  }
+  </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+<ul>
+<li><a href="#quickstart"><strong>💡<span>Quickstart</span></strong></a>
+<ul>
+<li><a href="#glossary"><strong><span>Glossary</span></strong></a></li>
+<li><a href="#useful-links--resources">🔗Useful Links &amp; Resources</a></li>
+</ul></li>
+<li><a href="#detailed-help">❓Detailed Help</a>
+<ul>
+<li><a href="#️shortcuts-and-hotkeys"><strong>⌨️<span>Shortcuts and Hotkeys</span></strong></a></li>
+<li><a href="#️novelai-features"><strong>⚙️NovelAI Features</strong></a></li>
+<li><a href="#️writing-help"><strong>✒️<span>Writing Help</span></strong></a></li>
+<li><a href="#️️privacy-and-security"><strong>🕵️‍♂️<span>Privacy and Security</span></strong></a></li>
+<li><a href="#theming"><strong>🎨<span>Theming</span></strong></a></li>
+</ul></li>
+<li><a href="#-expert-guides">👩‍💻 Expert Guides</a>
+<ul>
+<li><a href="#ai-writing">AI Writing</a>
+<ul>
+<li><a href="#end-of-input-tips"><strong>👨‍🏫<span>End of Input Tips</span></strong></a></li>
+<li><a href="#️narrative-example-tutorial-outdated"><strong>✒️<span>Narrative Example Tutorial</span></strong> (Outdated)</a></li>
+<li><a href="#️directing-the-narrative"><strong>🖊️<span>Directing the Narrative</span></strong></a></li>
+<li><a href="#lorebook-generation-tutorial"><strong>💻<span>Lorebook Generation Tutorial</span></strong></a></li>
+<li><a href="#phrase-bias-tutorial"><strong>📏<span>Phrase Bias Tutorial</span></strong></a></li>
+<li><a href="#using-regex"><strong>🤖<span>Using Regex</span></strong></a></li>
+<li><a href="#pumes-memory-guide-and-lorebook-guide"><strong>😺<span>Pume's Memory Guide</span> and <span>Lorebook Guide</span></strong></a></li>
+<li><a href="#️directing-ai-generation-outdated"><strong>👩‍✈️<span>Directing AI Generation</span></strong> (Outdated)</a></li>
+</ul></li>
+<li><a href="#️image-generation"><strong>🖼️<span>Image Generation</span></strong></a>
+<ul>
+<li><a href="#️database-of-interesting-image-generation-finds"><strong>🗄️<span>Database of Interesting Image Generation Finds</span></strong></a></li>
+<li><a href="#️carlyones-aesthetics-gallery"><strong>🎞️<span>Carlyone's Aesthetics Gallery</span></strong></a></li>
+</ul></li>
+<li><a href="#content-creation">Content Creation</a>
+<ul>
+<li><a href="#datasetting-for-ai-modules"><strong>📚<span>Datasetting for AI Modules</span></strong></a></li>
+<li><a href="#making-custom-themes"><strong>👩‍🎨<span>Making Custom Themes</span></strong></a></li>
+</ul></li>
+<li><a href="#technical-details--development">Technical Details &amp; Development</a>
+<ul>
+<li><a href="#using-the-api"><strong>🧑‍💻<span>Using the API</span></strong></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 <p>Welcome to the <strong>Unofficial <em>NovelAI</em> Knowledge Base</strong>.</p>
 <p><strong><em>NovelAI</em> is a living project. Information may become out of date, or inaccurate.</strong> While some content is reviewed by developers, this is NOT an official resource. <em>NovelAI</em> is not accountable for any content on this site.</p>
 <h1 id="quickstart"><strong>💡<a href="Quickstart.html">Quickstart</a></strong></h1>
@@ -103,5 +238,80 @@
 <hr />
 <h2 id="technical-details--development">Technical Details &amp; Development</h2>
 <h3 id="using-the-api"><strong>🧑‍💻<a href="Using-the-API.html">Using the API</a></strong></h3>
+
+<!-- Javascript added by toc-css.lua to make TOC expandable on click -->
+<script>
+
+  const b = document.querySelector("body");
+  const n = document.querySelector("nav");
+  const buttonsize = 20;
+
+  // click on "toc-title" to show TOC to the side
+  document.querySelector("#toc-title").addEventListener("click", function(e) {
+    if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+      n.classList.toggle("navshown");
+    } else {
+      b.classList.toggle("paddingleft");
+      n.classList.toggle("navside");
+      n.classList.remove("navshown");
+    };
+  });
+
+  // by default show TOC in large window
+  window.onload = function() {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    };
+  };
+
+  // show/hide TOC on resize
+  window.onresize = function () {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    } else {
+      b.classList.remove("paddingleft");
+      n.classList.remove("navside");
+    };
+  };
+
+  // show/hide subsections
+  const allLis = document.querySelectorAll("nav li");
+
+  for (const li of allLis) {
+    li.addEventListener('click', function (e) {
+      if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+        li.classList.toggle('subShow');
+        e.preventDefault();
+      };
+      if (e.clientX > e.currentTarget.getBoundingClientRect().left + 3*buttonsize) {
+        n.classList.remove("navshown");
+      };
+    });
+  };
+
+  // show full nav on tab, hide full nav on escape
+  document.addEventListener("keydown", function (e) {
+    if (e.which === 27) {
+      n.classList.remove("navshown");
+      e.preventDefault();
+    };
+    if (e.which === 9) {
+      n.classList.add("navshown");
+      e.preventDefault();
+    };
+  });
+
+  // hide full nav when clicked outside
+  document.addEventListener("click", function(e) {
+    if (n.classList.contains("navshown")) {
+      if (!n.contains(e.target)) {
+        n.classList.remove("navshown");
+      };
+    };
+  });
+
+</script>
 </body>
 </html>

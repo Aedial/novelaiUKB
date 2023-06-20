@@ -13,8 +13,118 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
+  <style>
+  body {
+    padding-left: 1cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  nav {
+    width: 1em;
+    margin-left: -1cm;
+    font-size: smaller;
+    color: grey;
+    transition: 0.5s;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav a, nav a:visited {
+    color: grey;
+  }
+  nav h2:before {
+    content: "≡ ";
+    font-size: 150%;
+  }
+  nav h2:after {
+    content: " ◂";
+  }
+  nav li {
+    margin-left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  nav li > a:not(:only-child):before {
+    content: "▸ ";
+  }
+  nav li > a:only-child {
+    margin-left: 0.75em;
+  }
+  nav li li {
+    margin-left: 1em;
+  }
+  nav li li li {
+    margin-left: 0.5em;
+    font-size: smaller;
+  }
+  nav ul li ul  {
+    visibility: hidden;
+    display: none;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    transition: 0.5s;
+  }
+  .paddingleft {
+    padding-left: 9cm;
+    transition: 0.5s;
+  }
+  .navside {
+    width: 7cm;
+    margin-left: -8.5cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  .navside h2:after {
+    content: " ▸";
+  }
+  .navshown {
+    width: 50%;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .subShow > ul {
+    visibility: visible;
+    display: block;
+    transition: 0.5s;
+    margin-left: -1em;
+  }
+  .subShow > a:not(:only-child):before {
+    content: "▾ ";
+  }
+  </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+<ul>
+<li><a href="#tags--metadata">Tags &amp; Metadata</a>
+<ul>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#layering">Layering</a></li>
+</ul></li>
+<li><a href="#tag-discovery">Tag Discovery</a>
+<ul>
+<li><a href="#formatting">Formatting</a></li>
+<li><a href="#tags-associated-with-an-author">Tags Associated with an Author</a></li>
+<li><a href="#authors-associated-with-a-tag">Authors Associated with a Tag</a></li>
+<li><a href="#tag-starting-a-prompt">Tag-starting a Prompt</a></li>
+<li><a href="#give-me-a-story-any-story">Give me a Story, any Story</a></li>
+<li><a href="#seeded-prompt-generation">Seeded Prompt Generation</a></li>
+</ul></li>
+<li><a href="#tips">Tips</a></li>
+<li><a href="#scaffolding">Scaffolding</a></li>
+</ul>
+</nav>
 <p><strong>This section is based on community findings using Sigurd V3. This is based on outdated information and mostly kept as a historical snapshot. Techniques shown here can apply to newer models but may have unexpected results..</strong></p>
 <p>Thanks go to <strong>Cass</strong> for putting together the initial draft, <strong>OccultSage</strong> for formatting and enriching this, <strong>Kalmarr</strong> and <strong>TravelingRobot</strong> for experimentation, and the folks of #community-research who went through hundred of permutations in the name of research!</p>
 <hr />
@@ -251,5 +361,80 @@ of the family.&quot;
 <p>This means that your story will be limited to 512 tokens, and the rest of the context will be filled with as much information as possible. <strong>All Forced Active entries will be inserted as ideally as possible.</strong> After that, it will be following the insertion order, going from the closest to 0, to the furthest from 0.</p>
 <p>You can adjust that scaffolding to your liking. If you don't need to define certain things, simply spend the token budget on others until you reach 2048-200 total tokens, or 1024-100 total tokens. (The context window is 1900 tokens on Krake.)</p>
 <p>Kalmarr offers several Scaffolding examples and more indepth information on his <a href="https://github.com/Kalmarr120/Kalmarr_NAI_Public/wiki/Format--and-Customization-Research#lorebook-settings">Research Page.</a></p>
+
+<!-- Javascript added by toc-css.lua to make TOC expandable on click -->
+<script>
+
+  const b = document.querySelector("body");
+  const n = document.querySelector("nav");
+  const buttonsize = 20;
+
+  // click on "toc-title" to show TOC to the side
+  document.querySelector("#toc-title").addEventListener("click", function(e) {
+    if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+      n.classList.toggle("navshown");
+    } else {
+      b.classList.toggle("paddingleft");
+      n.classList.toggle("navside");
+      n.classList.remove("navshown");
+    };
+  });
+
+  // by default show TOC in large window
+  window.onload = function() {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    };
+  };
+
+  // show/hide TOC on resize
+  window.onresize = function () {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    } else {
+      b.classList.remove("paddingleft");
+      n.classList.remove("navside");
+    };
+  };
+
+  // show/hide subsections
+  const allLis = document.querySelectorAll("nav li");
+
+  for (const li of allLis) {
+    li.addEventListener('click', function (e) {
+      if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+        li.classList.toggle('subShow');
+        e.preventDefault();
+      };
+      if (e.clientX > e.currentTarget.getBoundingClientRect().left + 3*buttonsize) {
+        n.classList.remove("navshown");
+      };
+    });
+  };
+
+  // show full nav on tab, hide full nav on escape
+  document.addEventListener("keydown", function (e) {
+    if (e.which === 27) {
+      n.classList.remove("navshown");
+      e.preventDefault();
+    };
+    if (e.which === 9) {
+      n.classList.add("navshown");
+      e.preventDefault();
+    };
+  });
+
+  // hide full nav when clicked outside
+  document.addEventListener("click", function(e) {
+    if (n.classList.contains("navshown")) {
+      if (!n.contains(e.target)) {
+        n.classList.remove("navshown");
+      };
+    };
+  });
+
+</script>
 </body>
 </html>

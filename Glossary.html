@@ -13,8 +13,198 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
+  <style>
+  body {
+    padding-left: 1cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  nav {
+    width: 1em;
+    margin-left: -1cm;
+    font-size: smaller;
+    color: grey;
+    transition: 0.5s;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav a, nav a:visited {
+    color: grey;
+  }
+  nav h2:before {
+    content: "≡ ";
+    font-size: 150%;
+  }
+  nav h2:after {
+    content: " ◂";
+  }
+  nav li {
+    margin-left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  nav li > a:not(:only-child):before {
+    content: "▸ ";
+  }
+  nav li > a:only-child {
+    margin-left: 0.75em;
+  }
+  nav li li {
+    margin-left: 1em;
+  }
+  nav li li li {
+    margin-left: 0.5em;
+    font-size: smaller;
+  }
+  nav ul li ul  {
+    visibility: hidden;
+    display: none;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    transition: 0.5s;
+  }
+  .paddingleft {
+    padding-left: 9cm;
+    transition: 0.5s;
+  }
+  .navside {
+    width: 7cm;
+    margin-left: -8.5cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  .navside h2:after {
+    content: " ▸";
+  }
+  .navshown {
+    width: 50%;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .subShow > ul {
+    visibility: visible;
+    display: block;
+    transition: 0.5s;
+    margin-left: -1em;
+  }
+  .subShow > a:not(:only-child):before {
+    content: "▾ ";
+  }
+  </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+<ul>
+<li><a href="#asterism-">Asterism (⁂)</a></li>
+<li><a href="#attg">ATTG</a></li>
+<li><a href="#attributes">Attributes</a></li>
+<li><a href="#authors-notes-an">Author's Notes (A/N)</a></li>
+<li><a href="#banned-tokens">Banned Tokens</a></li>
+<li><a href="#brackets">Brackets</a></li>
+<li><a href="#branch">Branch</a></li>
+<li><a href="#calliope-model">Calliope (model)</a></li>
+<li><a href="#canvas">Canvas</a></li>
+<li><a href="#cascading-activation">Cascading Activation</a></li>
+<li><a href="#caveman-format">Caveman Format</a></li>
+<li><a href="#clio">Clio</a></li>
+<li><a href="#context">Context</a></li>
+<li><a href="#context-window">Context Window</a></li>
+<li><a href="#context-viewer">Context Viewer</a></li>
+<li><a href="#dataset">Dataset</a></li>
+<li><a href="#dinkus-">Dinkus (***)</a></li>
+<li><a href="#end-of-sampling-eos">End of Sampling (EOS)</a></li>
+<li><a href="#end-of-text-token-endoftext">End of Text Token (&lt;|endoftext|&gt;)</a></li>
+<li><a href="#entry-or-lorebook-entry">Entry (or Lorebook Entry)</a></li>
+<li><a href="#ephemeral-context">Ephemeral Context</a></li>
+<li><a href="#euterpe-model">Euterpe (Model)</a></li>
+<li><a href="#finetune">Finetune</a></li>
+<li><a href="#flatten">Flatten</a></li>
+<li><a href="#format-or-lorebook-format">Format (or Lorebook Format)</a></li>
+<li><a href="#generation-or-ai-generation">Generation (or AI Generation)</a></li>
+<li><a href="#generative-pre-trained-transformer-gpt">Generative Pre-trained Transformer (GPT)</a></li>
+<li><a href="#guidance">Guidance</a></li>
+<li><a href="#image-resolution">Image Resolution</a></li>
+<li><a href="#image-to-image-img2img">Image To Image (Img2Img)</a></li>
+<li><a href="#inline-generation">Inline Generation</a></li>
+<li><a href="#inpainting">Inpainting</a></li>
+<li><a href="#lore-generator">Lore Generator</a></li>
+<li><a href="#krake-model">Krake (Model)</a></li>
+<li><a href="#lorebook">Lorebook</a></li>
+<li><a href="#lorebook-keys">Lorebook Keys</a></li>
+<li><a href="#loss-or-training-loss">Loss (or Training Loss)</a></li>
+<li><a href="#loss-graph">Loss Graph</a></li>
+<li><a href="#memory">Memory</a></li>
+<li><a href="#model">Model</a></li>
+<li><a href="#module-or-ai-module">Module (or AI Module)</a></li>
+<li><a href="#module-training">Module Training</a></li>
+<li><a href="#nai-diffusion-anime-curated">NAI Diffusion Anime Curated</a></li>
+<li><a href="#nai-diffusion-anime-full">NAI Diffusion Anime Full</a></li>
+<li><a href="#nai-diffusion-furry">NAI Diffusion Furry</a></li>
+<li><a href="#noise">Noise</a></li>
+<li><a href="#nucleus-sampling-top-p">Nucleus Sampling (Top-P)</a></li>
+<li><a href="#order-of-insertion">Order of Insertion</a></li>
+<li><a href="#output">Output</a></li>
+<li><a href="#perspective-or-pov">Perspective (or POV)</a></li>
+<li><a href="#phrase-bias">Phrase Bias</a></li>
+<li><a href="#placeholder">Placeholder</a></li>
+<li><a href="#preamble">Preamble</a></li>
+<li><a href="#prefix">Prefix</a></li>
+<li><a href="#preset-or-generation-preset">Preset (or Generation Preset)</a></li>
+<li><a href="#prompt">Prompt</a></li>
+<li><a href="#prose">Prose</a></li>
+<li><a href="#quality-tags">Quality Tags</a></li>
+<li><a href="#randomness-or-temperature">Randomness (or Temperature)</a></li>
+<li><a href="#redo-tree">Redo Tree</a></li>
+<li><a href="#repetition-penalty">Repetition Penalty</a></li>
+<li><a href="#reserved-tokens">Reserved Tokens</a></li>
+<li><a href="#retry">Retry</a></li>
+<li><a href="#sampling">Sampling</a></li>
+<li><a href="#scale">Scale</a></li>
+<li><a href="#scenario">Scenario</a></li>
+<li><a href="#search-range">Search Range</a></li>
+<li><a href="#seed">Seed</a></li>
+<li><a href="#separator-----">Separator (----)</a></li>
+<li><a href="#sigurd-model">Sigurd (model)</a></li>
+<li><a href="#stable-diffusion">Stable Diffusion</a></li>
+<li><a href="#step">Step</a></li>
+<li><a href="#storage">Storage</a></li>
+<li><a href="#story">Story</a></li>
+<li><a href="#story-tag">Story Tag</a></li>
+<li><a href="#stream-responses">Stream Responses</a></li>
+<li><a href="#subcontext">Subcontext</a></li>
+<li><a href="#suffix">Suffix</a></li>
+<li><a href="#tags">Tags</a></li>
+<li><a href="#tail-free-sampling-tfs">Tail-Free Sampling (TFS)</a></li>
+<li><a href="#text-adventure-module">Text Adventure Module</a></li>
+<li><a href="#theme">Theme</a></li>
+<li><a href="#tier">Tier</a></li>
+<li><a href="#token">Token</a></li>
+<li><a href="#token-budget">Token Budget</a></li>
+<li><a href="#token-id">Token ID</a></li>
+<li><a href="#tokenization">Tokenization</a></li>
+<li><a href="#tokensafe">Tokensafe</a></li>
+<li><a href="#top-a">Top-A</a></li>
+<li><a href="#top-k">Top-K</a></li>
+<li><a href="#top-kek">Top-Kek</a></li>
+<li><a href="#top-p">Top-P</a></li>
+<li><a href="#typical-sampling">Typical Sampling</a></li>
+<li><a href="#train-a-model">Train (a Model)</a></li>
+<li><a href="#trim">Trim</a></li>
+<li><a href="#undesired-content">Undesired Content</a></li>
+</ul>
+</nav>
 <p>This page aims to define terms that are often used by the community and may not be immediately accessible to newcomers.</p>
 <h2 id="asterism-">Asterism (⁂)</h2>
 <p><em>Typography</em></p>
@@ -318,5 +508,80 @@
 <h2 id="undesired-content">Undesired Content</h2>
 <p><em>Image Generation</em></p>
 <p>Also known as a "Negative Prompt", very similar to negative Phrase Bias, but for image generation. It heavily weakens a tag, in order to make it less likely to appear.</p>
+
+<!-- Javascript added by toc-css.lua to make TOC expandable on click -->
+<script>
+
+  const b = document.querySelector("body");
+  const n = document.querySelector("nav");
+  const buttonsize = 20;
+
+  // click on "toc-title" to show TOC to the side
+  document.querySelector("#toc-title").addEventListener("click", function(e) {
+    if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+      n.classList.toggle("navshown");
+    } else {
+      b.classList.toggle("paddingleft");
+      n.classList.toggle("navside");
+      n.classList.remove("navshown");
+    };
+  });
+
+  // by default show TOC in large window
+  window.onload = function() {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    };
+  };
+
+  // show/hide TOC on resize
+  window.onresize = function () {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    } else {
+      b.classList.remove("paddingleft");
+      n.classList.remove("navside");
+    };
+  };
+
+  // show/hide subsections
+  const allLis = document.querySelectorAll("nav li");
+
+  for (const li of allLis) {
+    li.addEventListener('click', function (e) {
+      if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+        li.classList.toggle('subShow');
+        e.preventDefault();
+      };
+      if (e.clientX > e.currentTarget.getBoundingClientRect().left + 3*buttonsize) {
+        n.classList.remove("navshown");
+      };
+    });
+  };
+
+  // show full nav on tab, hide full nav on escape
+  document.addEventListener("keydown", function (e) {
+    if (e.which === 27) {
+      n.classList.remove("navshown");
+      e.preventDefault();
+    };
+    if (e.which === 9) {
+      n.classList.add("navshown");
+      e.preventDefault();
+    };
+  });
+
+  // hide full nav when clicked outside
+  document.addEventListener("click", function(e) {
+    if (n.classList.contains("navshown")) {
+      if (!n.contains(e.target)) {
+        n.classList.remove("navshown");
+      };
+    };
+  });
+
+</script>
 </body>
 </html>

@@ -13,8 +13,142 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
+  <style>
+  body {
+    padding-left: 1cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  nav {
+    width: 1em;
+    margin-left: -1cm;
+    font-size: smaller;
+    color: grey;
+    transition: 0.5s;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav a, nav a:visited {
+    color: grey;
+  }
+  nav h2:before {
+    content: "≡ ";
+    font-size: 150%;
+  }
+  nav h2:after {
+    content: " ◂";
+  }
+  nav li {
+    margin-left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  nav li > a:not(:only-child):before {
+    content: "▸ ";
+  }
+  nav li > a:only-child {
+    margin-left: 0.75em;
+  }
+  nav li li {
+    margin-left: 1em;
+  }
+  nav li li li {
+    margin-left: 0.5em;
+    font-size: smaller;
+  }
+  nav ul li ul  {
+    visibility: hidden;
+    display: none;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    transition: 0.5s;
+  }
+  .paddingleft {
+    padding-left: 9cm;
+    transition: 0.5s;
+  }
+  .navside {
+    width: 7cm;
+    margin-left: -8.5cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  .navside h2:after {
+    content: " ▸";
+  }
+  .navshown {
+    width: 50%;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .subShow > ul {
+    visibility: visible;
+    display: block;
+    transition: 0.5s;
+    margin-left: -1em;
+  }
+  .subShow > a:not(:only-child):before {
+    content: "▾ ";
+  }
+  </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+<ul>
+<li><a href="#interacting">Interacting</a>
+<ul>
+<li><a href="#absolute-phrasing">Absolute Phrasing</a></li>
+<li><a href="#ambiguous-phrasing">Ambiguous Phrasing</a></li>
+<li><a href="#dangling-prompts">Dangling Prompts</a></li>
+<li><a href="#indirect-intent">Indirect Intent</a></li>
+</ul></li>
+<li><a href="#getting-more-detail">Getting More Detail</a></li>
+<li><a href="#dialogue">Dialogue</a>
+<ul>
+<li><a href="#uncertain-speakers-in-dialogue">Uncertain Speakers in Dialogue</a></li>
+</ul></li>
+<li><a href="#keeping-track-keeping_track">Keeping Track {#keeping_track}</a>
+<ul>
+<li><a href="#what-to-add">What to Add</a></li>
+<li><a href="#when-to-take-notes">When to Take Notes</a></li>
+<li><a href="#working-with-the-lorebook-working_with_the_lorebook">Working with the Lorebook {#working_with_the_lorebook}</a></li>
+<li><a href="#how-to-format-memory-how_to_format_memory">How to Format Memory {#how_to_format_memory}</a></li>
+<li><a href="#why-the-ai-forgets">Why the AI Forgets</a></li>
+</ul></li>
+<li><a href="#perspective">Perspective</a>
+<ul>
+<li><a href="#first-person-first_person">First Person {#first_person}</a></li>
+<li><a href="#second-person-second_person">Second Person {#second_person}</a></li>
+<li><a href="#third-person-third_person">Third Person {#third_person}</a></li>
+<li><a href="#changing-perspective-changing_perspective">Changing Perspective {#changing_perspective}</a></li>
+</ul></li>
+<li><a href="#custom-pronouns-custom_pronouns">Custom Pronouns {#custom_pronouns}</a></li>
+<li><a href="#verbs">Verbs</a>
+<ul>
+<li><a href="#tenses">Tenses</a></li>
+<li><a href="#what-about-the-future-what_about_the_future">What about the future? {#what_about_the_future}</a></li>
+<li><a href="#aspect">Aspect</a></li>
+<li><a href="#modality">Modality</a></li>
+</ul></li>
+<li><a href="#steering-the-plot-steering_the_plot">Steering the Plot {#steering_the_plot}</a>
+<ul>
+<li><a href="#what-to-write-what_to_write">What to Write {#what_to_write}</a></li>
+</ul></li>
+<li><a href="#why-negation-and-denial-is-hard-why_negation_and_denial_is_hard">Why Negation and Denial is Hard {#why_negation_and_denial_is_hard}</a></li>
+</ul>
+</nav>
 <p>This section seeks to explain in detail the finer points of using <em>NovelAI</em> to manage the world presented in your Story.</p>
 <h2 id="interacting">Interacting</h2>
 <p>At many points in your tales, you may find yourself wanting to directly influence the world around your protagonist. In these cases, there are a number of simple ways you can do so!</p>
@@ -277,5 +411,80 @@ This wasn&#39;t the first time I&#39;d hear the door.
 <p>If you feel the AI has issues dealing with a concept like this, try telling the AI what effects it has, again, trying to avoid negation as much as possible:</p>
 <pre><code>Johnathan is blind and can only see darkness. Johnathan must use his hearing and touch to locate people and objects. Johnathan&#39;s eyes are always closed.
 </code></pre>
+
+<!-- Javascript added by toc-css.lua to make TOC expandable on click -->
+<script>
+
+  const b = document.querySelector("body");
+  const n = document.querySelector("nav");
+  const buttonsize = 20;
+
+  // click on "toc-title" to show TOC to the side
+  document.querySelector("#toc-title").addEventListener("click", function(e) {
+    if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+      n.classList.toggle("navshown");
+    } else {
+      b.classList.toggle("paddingleft");
+      n.classList.toggle("navside");
+      n.classList.remove("navshown");
+    };
+  });
+
+  // by default show TOC in large window
+  window.onload = function() {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    };
+  };
+
+  // show/hide TOC on resize
+  window.onresize = function () {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    } else {
+      b.classList.remove("paddingleft");
+      n.classList.remove("navside");
+    };
+  };
+
+  // show/hide subsections
+  const allLis = document.querySelectorAll("nav li");
+
+  for (const li of allLis) {
+    li.addEventListener('click', function (e) {
+      if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+        li.classList.toggle('subShow');
+        e.preventDefault();
+      };
+      if (e.clientX > e.currentTarget.getBoundingClientRect().left + 3*buttonsize) {
+        n.classList.remove("navshown");
+      };
+    });
+  };
+
+  // show full nav on tab, hide full nav on escape
+  document.addEventListener("keydown", function (e) {
+    if (e.which === 27) {
+      n.classList.remove("navshown");
+      e.preventDefault();
+    };
+    if (e.which === 9) {
+      n.classList.add("navshown");
+      e.preventDefault();
+    };
+  });
+
+  // hide full nav when clicked outside
+  document.addEventListener("click", function(e) {
+    if (n.classList.contains("navshown")) {
+      if (!n.contains(e.target)) {
+        n.classList.remove("navshown");
+      };
+    };
+  });
+
+</script>
 </body>
 </html>

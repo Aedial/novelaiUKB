@@ -13,8 +13,169 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
+  <style>
+  body {
+    padding-left: 1cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  nav {
+    width: 1em;
+    margin-left: -1cm;
+    font-size: smaller;
+    color: grey;
+    transition: 0.5s;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav a, nav a:visited {
+    color: grey;
+  }
+  nav h2:before {
+    content: "≡ ";
+    font-size: 150%;
+  }
+  nav h2:after {
+    content: " ◂";
+  }
+  nav li {
+    margin-left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  nav li > a:not(:only-child):before {
+    content: "▸ ";
+  }
+  nav li > a:only-child {
+    margin-left: 0.75em;
+  }
+  nav li li {
+    margin-left: 1em;
+  }
+  nav li li li {
+    margin-left: 0.5em;
+    font-size: smaller;
+  }
+  nav ul li ul  {
+    visibility: hidden;
+    display: none;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    transition: 0.5s;
+  }
+  .paddingleft {
+    padding-left: 9cm;
+    transition: 0.5s;
+  }
+  .navside {
+    width: 7cm;
+    margin-left: -8.5cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  .navside h2:after {
+    content: " ▸";
+  }
+  .navshown {
+    width: 50%;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .subShow > ul {
+    visibility: visible;
+    display: block;
+    transition: 0.5s;
+    margin-left: -1em;
+  }
+  .subShow > a:not(:only-child):before {
+    content: "▾ ";
+  }
+  </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+<ul>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-the-endpoints">2. The endpoints</a>
+<ul>
+<li><a href="#21-terms-and-concepts">2.1. Terms and concepts</a>
+<ul>
+<li><a href="#211-access-key-and-access-token">2.1.1. Access key and Access token</a></li>
+<li><a href="#212-encryption-and-keystore">2.1.2. Encryption and Keystore</a></li>
+<li><a href="#213-compression">2.1.3. Compression</a></li>
+<li><a href="#214-logprobs">2.1.4. Logprobs</a></li>
+<li><a href="#215-infilling">2.1.5. Infilling</a></li>
+<li><a href="#216-hypebot">2.1.6. Hypebot</a></li>
+</ul></li>
+<li><a href="#22-endpoints-starting-with-">2.2. Endpoints starting with /</a>
+<ul>
+<li><a href="#221-">2.2.1. /</a></li>
+</ul></li>
+<li><a href="#23-endpoints-starting-with-user">2.3. Endpoints starting with /user/</a>
+<ul>
+<li><a href="#231-userregister">2.3.1. /user/register</a></li>
+<li><a href="#232-userlogin">2.3.2. /user/login</a></li>
+<li><a href="#233-userchange-access-key">2.3.3. /user/change-access-key</a></li>
+<li><a href="#234-userresend-email-verification">2.3.4. /user/resend-email-verification</a></li>
+<li><a href="#235-userverify-email">2.3.5. /user/verify-email</a></li>
+<li><a href="#236-userinformation">2.3.6. /user/information</a></li>
+<li><a href="#237-userdeletionrequest">2.3.7. /user/deletion/request</a></li>
+<li><a href="#238-userdeletiondelete">2.3.8. /user/deletion/delete</a></li>
+<li><a href="#239-userrecoveryrequest">2.3.9. /user/recovery/request</a></li>
+<li><a href="#2310-userrecoveryrecover">2.3.10. /user/recovery/recover</a></li>
+<li><a href="#2311-userdelete">2.3.11. /user/delete</a></li>
+<li><a href="#2312-userdata">2.3.12. /user/data</a></li>
+<li><a href="#2313-userpriority">2.3.13. /user/priority</a></li>
+<li><a href="#2314-usergiftkeys">2.3.14. /user/giftkeys</a></li>
+<li><a href="#2315-usersubscription">2.3.15. /user/subscription</a></li>
+<li><a href="#2316-userkeystore">2.3.16. /user/keystore</a></li>
+<li><a href="#2317-userobjectstype-type--stories-storycontent-aimodules-shelf-presets">2.3.17. /user/objects/{type} (type = "stories", "storycontent", "aimodules", "shelf", "presets")</a></li>
+<li><a href="#2318-userobjectstypeid">2.3.18. /user/objects/{type}/{id}</a></li>
+<li><a href="#2319-userclientsettings">2.3.19. /user/clientsettings</a></li>
+<li><a href="#2320-usersubmission">2.3.20. /user/submission</a></li>
+<li><a href="#2321-usersubmissionevent">2.3.21. /user/submission/{event}</a></li>
+<li><a href="#2322-uservote-submissionevent">2.3.22. /user/vote-submission/{event}</a></li>
+</ul></li>
+<li><a href="#24-usersubscription">2.4. /user/subscription/</a>
+<ul>
+<li><a href="#241-usersubscriptionbind">2.4.1. /user/subscription/bind</a></li>
+<li><a href="#242-usersubscriptionchange">2.4.2. /user/subscription/change</a></li>
+</ul></li>
+<li><a href="#25-ai">2.5. /ai/</a>
+<ul>
+<li><a href="#251-aigenerate">2.5.1. /ai/generate</a></li>
+<li><a href="#252-aigenerate-prompt">2.5.2. /ai/generate-prompt</a></li>
+<li><a href="#253-aigenerate-stream">2.5.3. /ai/generate-stream</a></li>
+<li><a href="#254-aiannotate-image">2.5.4. /ai/annotate-image</a></li>
+<li><a href="#255-aigenerate-image">2.5.5. /ai/generate-image</a></li>
+<li><a href="#256-aiupscale">2.5.6. /ai/upscale</a></li>
+<li><a href="#257-aiclassify">2.5.7. /ai/classify</a></li>
+<li><a href="#258-aigenerate-imagesuggest-tags">2.5.8. /ai/generate-image/suggest-tags</a></li>
+<li><a href="#259-aigenerate-voice">2.5.9. /ai/generate-voice</a></li>
+</ul></li>
+<li><a href="#26-aimodule">2.6. /ai/module/</a>
+<ul>
+<li><a href="#261-aimoduletrain">2.6.1. /ai/module/train</a></li>
+<li><a href="#262-aimoduleall">2.6.2. /ai/module/all</a></li>
+<li><a href="#263-aimoduleid">2.6.3. /ai/module/{id}</a></li>
+<li><a href="#264-aimodulebuy-training-steps">2.6.4. /ai/module/buy-training-steps</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#3-unofficial-api-resources">3. Unofficial API resources</a></li>
+</ul>
+</nav>
 <p>*<strong>Written by <em>Aedial</em></strong></p>
 <h1 id="1-introduction">1. Introduction</h1>
 <p>The API is the backbone of the website. All text and image generation, storage your content, and much more happens through API requests. As such, it is possible to use API requests to interact with NovelAI's back-end in ways that are more elaborate and sometimes originally unintended by the developers. Due to this, using the API comes with some restrictions that must be followed (<a href="https://novelai.net/terms">ToS</a> - sections 5.3 and 9.1) :</p>
@@ -176,5 +337,80 @@
 <li>Golang - <a href="https://github.com/wbrown/novelai-research-tool">https://github.com/wbrown/novelai-research-tool</a> (more of a tool than an API, but uses the API)</li>
 <li>Python - <a href="https://github.com/Aedial/novelai-api">https://github.com/Aedial/novelai-api</a></li>
 </ul>
+
+<!-- Javascript added by toc-css.lua to make TOC expandable on click -->
+<script>
+
+  const b = document.querySelector("body");
+  const n = document.querySelector("nav");
+  const buttonsize = 20;
+
+  // click on "toc-title" to show TOC to the side
+  document.querySelector("#toc-title").addEventListener("click", function(e) {
+    if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+      n.classList.toggle("navshown");
+    } else {
+      b.classList.toggle("paddingleft");
+      n.classList.toggle("navside");
+      n.classList.remove("navshown");
+    };
+  });
+
+  // by default show TOC in large window
+  window.onload = function() {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    };
+  };
+
+  // show/hide TOC on resize
+  window.onresize = function () {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    } else {
+      b.classList.remove("paddingleft");
+      n.classList.remove("navside");
+    };
+  };
+
+  // show/hide subsections
+  const allLis = document.querySelectorAll("nav li");
+
+  for (const li of allLis) {
+    li.addEventListener('click', function (e) {
+      if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+        li.classList.toggle('subShow');
+        e.preventDefault();
+      };
+      if (e.clientX > e.currentTarget.getBoundingClientRect().left + 3*buttonsize) {
+        n.classList.remove("navshown");
+      };
+    });
+  };
+
+  // show full nav on tab, hide full nav on escape
+  document.addEventListener("keydown", function (e) {
+    if (e.which === 27) {
+      n.classList.remove("navshown");
+      e.preventDefault();
+    };
+    if (e.which === 9) {
+      n.classList.add("navshown");
+      e.preventDefault();
+    };
+  });
+
+  // hide full nav when clicked outside
+  document.addEventListener("click", function(e) {
+    if (n.classList.contains("navshown")) {
+      if (!n.contains(e.target)) {
+        n.classList.remove("navshown");
+      };
+    };
+  });
+
+</script>
 </body>
 </html>

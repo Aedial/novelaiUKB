@@ -13,8 +13,128 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
+  <style>
+  body {
+    padding-left: 1cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  nav {
+    width: 1em;
+    margin-left: -1cm;
+    font-size: smaller;
+    color: grey;
+    transition: 0.5s;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav a, nav a:visited {
+    color: grey;
+  }
+  nav h2:before {
+    content: "≡ ";
+    font-size: 150%;
+  }
+  nav h2:after {
+    content: " ◂";
+  }
+  nav li {
+    margin-left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  nav li > a:not(:only-child):before {
+    content: "▸ ";
+  }
+  nav li > a:only-child {
+    margin-left: 0.75em;
+  }
+  nav li li {
+    margin-left: 1em;
+  }
+  nav li li li {
+    margin-left: 0.5em;
+    font-size: smaller;
+  }
+  nav ul li ul  {
+    visibility: hidden;
+    display: none;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    transition: 0.5s;
+  }
+  .paddingleft {
+    padding-left: 9cm;
+    transition: 0.5s;
+  }
+  .navside {
+    width: 7cm;
+    margin-left: -8.5cm;
+    padding-right: 1cm;
+    transition: 0.5s;
+  }
+  .navside h2:after {
+    content: " ▸";
+  }
+  .navshown {
+    width: 50%;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .subShow > ul {
+    visibility: visible;
+    display: block;
+    transition: 0.5s;
+    margin-left: -1em;
+  }
+  .subShow > a:not(:only-child):before {
+    content: "▾ ";
+  }
+  </style>
 </head>
 <body>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#what-is-biasing">What is Biasing?</a></li>
+<li><a href="#what-can-we-do-with-phrase-biasing">What Can We Do With Phrase Biasing?</a></li>
+</ul></li>
+<li><a href="#story-pacing">Story Pacing</a>
+<ul>
+<li><a href="#before">Before</a></li>
+<li><a href="#settings">Settings</a></li>
+<li><a href="#after">After</a></li>
+</ul></li>
+<li><a href="#control-novelai-grammatical-usage">Control NovelAI Grammatical Usage</a>
+<ul>
+<li><a href="#avoiding-using-expletives-at-the-beginning-of-sentences">Avoiding Using Expletives At The Beginning of Sentences</a></li>
+<li><a href="#avoid-circumlocutions-in-favor-of-direct-expressions">Avoid Circumlocutions In Favor of Direct Expressions</a></li>
+<li><a href="#avoid-overusing-noun-forms-of-verbs">Avoid Overusing Noun Forms Of Verbs</a></li>
+<li><a href="#trying-it-out">Trying It Out</a></li>
+</ul></li>
+<li><a href="#control-the-theme-of-the-story">Control The Theme Of The Story</a>
+<ul>
+<li><a href="#a-story-about-rainbows-unicorns-and-girls-on-an-island">A Story About Rainbows, Unicorns, and Girls on an Island</a></li>
+<li><a href="#a-worldships-first-contact">A Worldship's First Contact</a></li>
+</ul></li>
+<li><a href="#layering-phrase-biases">Layering Phrase Biases</a></li>
+<li><a href="#notes-and-caveats">Notes and Caveats</a></li>
+<li><a href="#questions-feedback-ideas">Questions, Feedback, Ideas</a></li>
+</ul>
+</nav>
 <p>written by OccultSage, with thanks to AlexeiP, Pause, Aini, and u/sgt_brutal</p>
 <p><em><strong>Note: Biases are <strong>extremely strong</strong> on Krake and Clio. You will need to reduce their intensity considerably to avoid soft bans or constant looping. It is suggested to add a 0 immediately after the decimal point compared to an Euterpe bias. Thus, 0.3 would become 0.03. Anything over 0.05 is usually too strong.</strong></em></p>
 <h2 id="introduction">Introduction</h2>
@@ -257,5 +377,80 @@ They both stared at the stars until someone cleared his throat behind them.
 <li><a href="https://cdn.discordapp.com/attachments/895192255818792970/895859354111184936/Story_Flow_Control.bias">Story Flow Control.bias</a></li>
 <li><a href="https://cdn.discordapp.com/attachments/895192255818792970/895857459963519006/Better_Writing_Biases.bias">Better Writing Biases.bias</a></li>
 </ul>
+
+<!-- Javascript added by toc-css.lua to make TOC expandable on click -->
+<script>
+
+  const b = document.querySelector("body");
+  const n = document.querySelector("nav");
+  const buttonsize = 20;
+
+  // click on "toc-title" to show TOC to the side
+  document.querySelector("#toc-title").addEventListener("click", function(e) {
+    if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+      n.classList.toggle("navshown");
+    } else {
+      b.classList.toggle("paddingleft");
+      n.classList.toggle("navside");
+      n.classList.remove("navshown");
+    };
+  });
+
+  // by default show TOC in large window
+  window.onload = function() {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    };
+  };
+
+  // show/hide TOC on resize
+  window.onresize = function () {
+    if (window.innerWidth > 1000) {
+      b.classList.add("paddingleft");
+      n.classList.add("navside");
+    } else {
+      b.classList.remove("paddingleft");
+      n.classList.remove("navside");
+    };
+  };
+
+  // show/hide subsections
+  const allLis = document.querySelectorAll("nav li");
+
+  for (const li of allLis) {
+    li.addEventListener('click', function (e) {
+      if (e.clientX < e.currentTarget.getBoundingClientRect().left + buttonsize) {
+        li.classList.toggle('subShow');
+        e.preventDefault();
+      };
+      if (e.clientX > e.currentTarget.getBoundingClientRect().left + 3*buttonsize) {
+        n.classList.remove("navshown");
+      };
+    });
+  };
+
+  // show full nav on tab, hide full nav on escape
+  document.addEventListener("keydown", function (e) {
+    if (e.which === 27) {
+      n.classList.remove("navshown");
+      e.preventDefault();
+    };
+    if (e.which === 9) {
+      n.classList.add("navshown");
+      e.preventDefault();
+    };
+  });
+
+  // hide full nav when clicked outside
+  document.addEventListener("click", function(e) {
+    if (n.classList.contains("navshown")) {
+      if (!n.contains(e.target)) {
+        n.classList.remove("navshown");
+      };
+    };
+  });
+
+</script>
 </body>
 </html>
