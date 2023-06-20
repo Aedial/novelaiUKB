@@ -411,6 +411,23 @@ This wasn&#39;t the first time I&#39;d hear the door.
 <p>If you feel the AI has issues dealing with a concept like this, try telling the AI what effects it has, again, trying to avoid negation as much as possible:</p>
 <pre><code>Johnathan is blind and can only see darkness. Johnathan must use his hearing and touch to locate people and objects. Johnathan&#39;s eyes are always closed.
 </code></pre>
+<!-- Javascript added by darkmode.lua to allow dark mode button -->
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const darkmode_options = {
+      mixColor: '#fff', // default: '#fff'
+      backgroundColor: '#fff',  // default: '#fff'
+      buttonColorDark: '#100f2c',  // default: '#100f2c'
+      buttonColorLight: '#fff', // default: '#fff'
+      label: '🌓',
+    }
+
+    new Darkmode(darkmode_options).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
+
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>

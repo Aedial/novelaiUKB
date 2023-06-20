@@ -193,6 +193,23 @@
 <p>When <strong>Enabled</strong>, the Repetition Penalty is <strong>only applied to the story.</strong> All text injections (Lorebook, Author's Note, Memory, Ephemeral Context) will be <em>ignored</em> for the purposes of repetition penalty.</p>
 <h3 id="repetition-penalty-slope">Repetition Penalty Slope</h3>
 <p>The penalty to repeated tokens is applied differently based on distance from the final token. The distribution of that penalty follows a S-shaped curve. If the sloping is set to 0, that curve will be completely flat. All tokens will be penalized equally. If it is set to a very high value, it'll act more like two steps: Early tokens will receive little to no penalty, but later ones will be considerably penalized.</p>
+<!-- Javascript added by darkmode.lua to allow dark mode button -->
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const darkmode_options = {
+      mixColor: '#fff', // default: '#fff'
+      backgroundColor: '#fff',  // default: '#fff'
+      buttonColorDark: '#100f2c',  // default: '#100f2c'
+      buttonColorLight: '#fff', // default: '#fff'
+      label: '🌓',
+    }
+
+    new Darkmode(darkmode_options).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
+
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>

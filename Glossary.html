@@ -508,6 +508,23 @@
 <h2 id="undesired-content">Undesired Content</h2>
 <p><em>Image Generation</em></p>
 <p>Also known as a "Negative Prompt", very similar to negative Phrase Bias, but for image generation. It heavily weakens a tag, in order to make it less likely to appear.</p>
+<!-- Javascript added by darkmode.lua to allow dark mode button -->
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const darkmode_options = {
+      mixColor: '#fff', // default: '#fff'
+      backgroundColor: '#fff',  // default: '#fff'
+      buttonColorDark: '#100f2c',  // default: '#100f2c'
+      buttonColorLight: '#fff', // default: '#fff'
+      label: '🌓',
+    }
+
+    new Darkmode(darkmode_options).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
+
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>

@@ -361,6 +361,23 @@ of the family.&quot;
 <p>This means that your story will be limited to 512 tokens, and the rest of the context will be filled with as much information as possible. <strong>All Forced Active entries will be inserted as ideally as possible.</strong> After that, it will be following the insertion order, going from the closest to 0, to the furthest from 0.</p>
 <p>You can adjust that scaffolding to your liking. If you don't need to define certain things, simply spend the token budget on others until you reach 2048-200 total tokens, or 1024-100 total tokens. (The context window is 1900 tokens on Krake.)</p>
 <p>Kalmarr offers several Scaffolding examples and more indepth information on his <a href="https://github.com/Kalmarr120/Kalmarr_NAI_Public/wiki/Format--and-Customization-Research#lorebook-settings">Research Page.</a></p>
+<!-- Javascript added by darkmode.lua to allow dark mode button -->
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const darkmode_options = {
+      mixColor: '#fff', // default: '#fff'
+      backgroundColor: '#fff',  // default: '#fff'
+      buttonColorDark: '#100f2c',  // default: '#100f2c'
+      buttonColorLight: '#fff', // default: '#fff'
+      label: '🌓',
+    }
+
+    new Darkmode(darkmode_options).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
+
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>

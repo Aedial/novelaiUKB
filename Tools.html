@@ -142,6 +142,23 @@
 <p>The left side of the interface displays the response text. You can ,switch between displaying the text proper, or the Token IDs. Cooler ,colors represent tokens with a low likelihood to appear, while hotter ,colors represent tokens highly likely to appear.</p>
 <p>If you click a token, the right panel will update to show you tokens that were considered by the AI, before the generation settings, biases, ,bans and modules and after them.</p>
 <p>Only the 10 most likely tokens are shown. The remainder is grouped up as a whole entity to save on processing time.</p>
+<!-- Javascript added by darkmode.lua to allow dark mode button -->
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const darkmode_options = {
+      mixColor: '#fff', // default: '#fff'
+      backgroundColor: '#fff',  // default: '#fff'
+      buttonColorDark: '#100f2c',  // default: '#100f2c'
+      buttonColorLight: '#fff', // default: '#fff'
+      label: '🌓',
+    }
+
+    new Darkmode(darkmode_options).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
+
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>

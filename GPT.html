@@ -150,6 +150,23 @@
 <p>This is similar to <a href="https://en.wikipedia.org/wiki/Ironic_process_theory">ironic process theory</a>. Instead, you should phrase <em>positively</em> - <code>John is blind.</code> - where possible.</p>
 <h3 id="tokenizer-tool">Tokenizer Tool</h3>
 <p><em>NovelAI</em> includes a built-in Tokenizer <a href="Tools.html">Tool</a> that allows you to see not only the breakdown of tokens used in an input, but also the token IDs, token count, and character count. This tool is accessed through the main menu, or by clicking on the token count of Memory, Author's Note or Lorebook entries.</p>
+<!-- Javascript added by darkmode.lua to allow dark mode button -->
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    const darkmode_options = {
+      mixColor: '#fff', // default: '#fff'
+      backgroundColor: '#fff',  // default: '#fff'
+      buttonColorDark: '#100f2c',  // default: '#100f2c'
+      buttonColorLight: '#fff', // default: '#fff'
+      label: '🌓',
+    }
+
+    new Darkmode(darkmode_options).showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
+
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
