@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Story Settings</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,24 +110,30 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">Story Settings</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#ai-model">AI Model</a>
-<ul>
-<li><a href="#ai-module">AI Module</a></li>
-<li><a href="#storys-memory">Story's Memory</a></li>
-<li><a href="#storys-authors-note">Story's Author's Note</a></li>
-<li><a href="#lorebook-quick-access">Lorebook Quick Access</a></li>
-<li><a href="#story-stats">Story Stats</a></li>
-<li><a href="#exporting-the-story">Exporting the Story</a></li>
-<li><a href="#screenshot-designer">Screenshot Designer</a></li>
-</ul></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#ai-model">AI Model</a>
+    <ul>
+    <li><a href="#ai-module">AI Module</a></li>
+    <li><a href="#storys-memory">Story's Memory</a></li>
+    <li><a href="#storys-authors-note">Story's Author's Note</a></li>
+    <li><a href="#lorebook-quick-access">Lorebook Quick Access</a></li>
+    <li><a href="#story-stats">Story Stats</a></li>
+    <li><a href="#exporting-the-story">Exporting the Story</a></li>
+    <li><a href="#screenshot-designer">Screenshot Designer</a></li>
+    </ul></li>
+    </ul>
 </nav>
+
+<main>
 <p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/25e7a750-baf8-415a-8f2d-1a29bab3e6bd" alt="image" /></p>
 <p>This section of the interface controls settings <strong>specific to your currently active Story</strong>. There are three tabs here - <strong>Story</strong> and <strong>Advanced</strong> and <strong>Generation Settings</strong>. This page focuses on the first.</p>
 <h2 id="ai-model">AI Model</h2>
@@ -200,23 +200,6 @@
 </ul>
 <p>You can select the font size, the width of the picture in pixels, as well as if you'd like to use NovelAI's default dark or light theme, or the one currently in use.</p>
 <hr />
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -314,5 +297,7 @@
   });
 
 </script>
+</main>
+
 </body>
 </html>

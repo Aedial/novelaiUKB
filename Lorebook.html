@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Lorebook</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,18 +110,24 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">Lorebook</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#categories">Categories</a></li>
-<li><a href="#placement-tab">Placement Tab</a></li>
-<li><a href="#lorebook-phrase-bias">Lorebook Phrase Bias</a></li>
-<li><a href="#lore-generator">Lore Generator</a></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#placement-tab">Placement Tab</a></li>
+    <li><a href="#lorebook-phrase-bias">Lorebook Phrase Bias</a></li>
+    <li><a href="#lore-generator">Lore Generator</a></li>
+    </ul>
 </nav>
+
+<main>
 <p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/1bfa191e-4687-401d-882c-071faf74f52c" alt="image" /></p>
 <p>The Lorebook allows you to create entries for <strong>specific elements in your story</strong>. This helps the AI have more information about characters, places, items, concepts and so on.</p>
 <p>Click the <strong>📗 button</strong> on the input bar, or in the "Lorebook Quick Access" area of the Story tab on the right, to open the main lorebook window.</p>
@@ -203,23 +203,6 @@ FTL Travel (Space Folding, Instantaneous)
 </code></pre>
 <p>Press ▶ or <strong>Ctrl/Cmd⌘+Enter</strong> to generate. Click 🔃 to retry the last generation. You can freely edit the text, and keep generating, just like in the main text editor!</p>
 <p><strong>Generation History</strong> is similar to the <strong>Redo Tree</strong>, displaying the last generations <em>for all entries</em>. The list is purged on refresh.</p>
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -317,5 +300,7 @@ FTL Travel (Space Folding, Instantaneous)
   });
 
 </script>
+</main>
+
 </body>
 </html>

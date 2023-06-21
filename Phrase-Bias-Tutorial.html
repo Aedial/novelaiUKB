@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Phrase Bias Tutorial</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,40 +110,46 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">Phrase Bias Tutorial</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#introduction">Introduction</a>
-<ul>
-<li><a href="#what-is-biasing">What is Biasing?</a></li>
-<li><a href="#what-can-we-do-with-phrase-biasing">What Can We Do With Phrase Biasing?</a></li>
-</ul></li>
-<li><a href="#story-pacing">Story Pacing</a>
-<ul>
-<li><a href="#before">Before</a></li>
-<li><a href="#settings">Settings</a></li>
-<li><a href="#after">After</a></li>
-</ul></li>
-<li><a href="#control-novelai-grammatical-usage">Control NovelAI Grammatical Usage</a>
-<ul>
-<li><a href="#avoiding-using-expletives-at-the-beginning-of-sentences">Avoiding Using Expletives At The Beginning of Sentences</a></li>
-<li><a href="#avoid-circumlocutions-in-favor-of-direct-expressions">Avoid Circumlocutions In Favor of Direct Expressions</a></li>
-<li><a href="#avoid-overusing-noun-forms-of-verbs">Avoid Overusing Noun Forms Of Verbs</a></li>
-<li><a href="#trying-it-out">Trying It Out</a></li>
-</ul></li>
-<li><a href="#control-the-theme-of-the-story">Control The Theme Of The Story</a>
-<ul>
-<li><a href="#a-story-about-rainbows-unicorns-and-girls-on-an-island">A Story About Rainbows, Unicorns, and Girls on an Island</a></li>
-<li><a href="#a-worldships-first-contact">A Worldship's First Contact</a></li>
-</ul></li>
-<li><a href="#layering-phrase-biases">Layering Phrase Biases</a></li>
-<li><a href="#notes-and-caveats">Notes and Caveats</a></li>
-<li><a href="#questions-feedback-ideas">Questions, Feedback, Ideas</a></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#introduction">Introduction</a>
+    <ul>
+    <li><a href="#what-is-biasing">What is Biasing?</a></li>
+    <li><a href="#what-can-we-do-with-phrase-biasing">What Can We Do With Phrase Biasing?</a></li>
+    </ul></li>
+    <li><a href="#story-pacing">Story Pacing</a>
+    <ul>
+    <li><a href="#before">Before</a></li>
+    <li><a href="#settings">Settings</a></li>
+    <li><a href="#after">After</a></li>
+    </ul></li>
+    <li><a href="#control-novelai-grammatical-usage">Control NovelAI Grammatical Usage</a>
+    <ul>
+    <li><a href="#avoiding-using-expletives-at-the-beginning-of-sentences">Avoiding Using Expletives At The Beginning of Sentences</a></li>
+    <li><a href="#avoid-circumlocutions-in-favor-of-direct-expressions">Avoid Circumlocutions In Favor of Direct Expressions</a></li>
+    <li><a href="#avoid-overusing-noun-forms-of-verbs">Avoid Overusing Noun Forms Of Verbs</a></li>
+    <li><a href="#trying-it-out">Trying It Out</a></li>
+    </ul></li>
+    <li><a href="#control-the-theme-of-the-story">Control The Theme Of The Story</a>
+    <ul>
+    <li><a href="#a-story-about-rainbows-unicorns-and-girls-on-an-island">A Story About Rainbows, Unicorns, and Girls on an Island</a></li>
+    <li><a href="#a-worldships-first-contact">A Worldship's First Contact</a></li>
+    </ul></li>
+    <li><a href="#layering-phrase-biases">Layering Phrase Biases</a></li>
+    <li><a href="#notes-and-caveats">Notes and Caveats</a></li>
+    <li><a href="#questions-feedback-ideas">Questions, Feedback, Ideas</a></li>
+    </ul>
 </nav>
+
+<main>
 <p>written by OccultSage, with thanks to AlexeiP, Pause, Aini, and u/sgt_brutal</p>
 <p><em><strong>Note: Biases are <strong>extremely strong</strong> on Krake and Clio. You will need to reduce their intensity considerably to avoid soft bans or constant looping. It is suggested to add a 0 immediately after the decimal point compared to an Euterpe bias. Thus, 0.3 would become 0.03. Anything over 0.05 is usually too strong.</strong></em></p>
 <h2 id="introduction">Introduction</h2>
@@ -392,23 +392,6 @@ They both stared at the stars until someone cleared his throat behind them.
 <li><a href="https://cdn.discordapp.com/attachments/895192255818792970/895859354111184936/Story_Flow_Control.bias">Story Flow Control.bias</a></li>
 <li><a href="https://cdn.discordapp.com/attachments/895192255818792970/895857459963519006/Better_Writing_Biases.bias">Better Writing Biases.bias</a></li>
 </ul>
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -506,5 +489,7 @@ They both stared at the stars until someone cleared his throat behind them.
   });
 
 </script>
+</main>
+
 </body>
 </html>

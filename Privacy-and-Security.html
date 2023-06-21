@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Privacy and Security</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,22 +110,28 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">Privacy and Security</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#encryption">Encryption</a></li>
-<li><a href="#local-storage">Local Storage</a></li>
-<li><a href="#remote-storage">Remote Storage</a></li>
-<li><a href="#account-management">Account Management</a>
-<ul>
-<li><a href="#account-termination">Account Termination</a></li>
-<li><a href="#changing-your-password">Changing Your Password</a></li>
-</ul></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#encryption">Encryption</a></li>
+    <li><a href="#local-storage">Local Storage</a></li>
+    <li><a href="#remote-storage">Remote Storage</a></li>
+    <li><a href="#account-management">Account Management</a>
+    <ul>
+    <li><a href="#account-termination">Account Termination</a></li>
+    <li><a href="#changing-your-password">Changing Your Password</a></li>
+    </ul></li>
+    </ul>
 </nav>
+
+<main>
 <h2 id="encryption">Encryption</h2>
 <p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/5f67d5e3-372c-4951-88a1-e5210c01c76a" alt="image" /></p>
 <p>Encryption is performed through the <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES-256</a> standard. It possesses incredible entropy, meaning brute force attacks are practically impossible.</p>
@@ -166,23 +166,6 @@
 <p>If the process fails you can try contacting the NovelAI support at <strong><a href="mailto:support@novelai.net">support@novelai.net</a></strong>.</p>
 <hr />
 <p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/d033ad8a-909b-4f03-a6fc-e4877c4a02b6" alt="image" /></p>
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -280,5 +263,7 @@
   });
 
 </script>
+</main>
+
 </body>
 </html>

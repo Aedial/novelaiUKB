@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>User Settings</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,23 +110,29 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">User Settings</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#ai-settings">AI Settings</a></li>
-<li><a href="#interface-tab">Interface Tab</a></li>
-<li><a href="#theme">Theme</a></li>
-<li><a href="#account-tab">Account tab</a></li>
-<li><a href="#text-to-speech-tab">Text to Speech tab</a>
-<ul>
-<li><a href="#seed-mixing">Seed Mixing</a></li>
-</ul></li>
-<li><a href="#defaults-tab">Defaults tab</a></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#ai-settings">AI Settings</a></li>
+    <li><a href="#interface-tab">Interface Tab</a></li>
+    <li><a href="#theme">Theme</a></li>
+    <li><a href="#account-tab">Account tab</a></li>
+    <li><a href="#text-to-speech-tab">Text to Speech tab</a>
+    <ul>
+    <li><a href="#seed-mixing">Seed Mixing</a></li>
+    </ul></li>
+    <li><a href="#defaults-tab">Defaults tab</a></li>
+    </ul>
 </nav>
+
+<main>
 <p>The <strong>User Settings</strong> can be accessed from the <em>Story Library</em>, then clicking on the Settings button (<strong>⚙️</strong>), or the Goose button.</p>
 <p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/1d9054a9-67cd-4f3e-9634-6c7fecbe0f3f" alt="image" /></p>
 <h2 id="ai-settings">AI Settings</h2>
@@ -227,23 +227,6 @@
 <p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/d4b16976-6b3c-42e0-9266-cdc331fc7b06" alt="image" /></p>
 <p>The <strong>Defaults</strong> tab allows you to set the default <strong>Model</strong>, <strong>Generation Settings</strong> and <strong>Module</strong> for new stories.</p>
 <p><strong>Legacy Lore Generation</strong> uses an older model with less functionalities for Lore Generation.</p>
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -341,5 +324,7 @@
   });
 
 </script>
+</main>
+
 </body>
 </html>

@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Image Generation</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,29 +110,35 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">Image Generation</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#how-is-the-ai-trained">How is the AI trained?</a></li>
-<li><a href="#tag-based-prompting">Tag-based Prompting</a>
-<ul>
-<li><a href="#quality-tags">Quality Tags</a></li>
-<li><a href="#counting-characters-and-gender">Counting Characters and Gender</a></li>
-<li><a href="#character-reference-and-artist-reference">Character Reference and Artist Reference</a></li>
-<li><a href="#tag-interaction">Tag Interaction</a></li>
-<li><a href="#facial-expressions">Facial Expressions</a></li>
-</ul></li>
-<li><a href="#prose-prompting">Prose Prompting</a>
-<ul>
-<li><a href="#story-conversion">Story Conversion</a></li>
-<li><a href="#clip-interrogator">CLIP Interrogator</a></li>
-<li><a href="#combo-prompting">Combo Prompting</a></li>
-</ul></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#how-is-the-ai-trained">How is the AI trained?</a></li>
+    <li><a href="#tag-based-prompting">Tag-based Prompting</a>
+    <ul>
+    <li><a href="#quality-tags">Quality Tags</a></li>
+    <li><a href="#counting-characters-and-gender">Counting Characters and Gender</a></li>
+    <li><a href="#character-reference-and-artist-reference">Character Reference and Artist Reference</a></li>
+    <li><a href="#tag-interaction">Tag Interaction</a></li>
+    <li><a href="#facial-expressions">Facial Expressions</a></li>
+    </ul></li>
+    <li><a href="#prose-prompting">Prose Prompting</a>
+    <ul>
+    <li><a href="#story-conversion">Story Conversion</a></li>
+    <li><a href="#clip-interrogator">CLIP Interrogator</a></li>
+    <li><a href="#combo-prompting">Combo Prompting</a></li>
+    </ul></li>
+    </ul>
 </nav>
+
+<main>
 <p><strong>This guide is focused on nascent technology. As a result, contents might be highly volatile.</strong></p>
 <p>Anlatan already provides an in-depth guide to using their Image Generation service <a href="https://docs.novelai.net/">here</a>. It is highly recommended you read it thoroughly because it explains every functionality and all pieces of the UI in great detail.</p>
 <p>You should also read <a href="https://github.com/TravelingRobot/NAI_Community_Research/wiki/NAI-Diffusion:-Various-Tips-&amp;-Tricks">Traveling Robot's research notes</a> as well. This guide expounds on some of them.</p>
@@ -212,23 +212,6 @@
 <h2 id="combo-prompting">Combo Prompting</h2>
 <p>If you are generating an image of a specific character that has a small amount of pictures, you can combine a prose prompt and tags appends in order to obtain something closer to the desired result.</p>
 <p><code>a picture of {ayanami} from azur lane, white hair, red eyes, ponytail,</code></p>
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -326,5 +309,7 @@
   });
 
 </script>
+</main>
+
 </body>
 </html>

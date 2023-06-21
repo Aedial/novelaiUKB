@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Generation Settings</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,35 +110,41 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">Generation Settings</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#generation-presets">Generation Presets</a></li>
-<li><a href="#generation-options">Generation Options</a>
-<ul>
-<li><a href="#randomness-temperature">Randomness (Temperature)</a></li>
-<li><a href="#output-length">Output Length</a></li>
-<li><a href="#repetition-penalty">Repetition Penalty</a></li>
-</ul></li>
-<li><a href="#sampling">Sampling</a>
-<ul>
-<li><a href="#top-k-sampling">Top-K Sampling</a></li>
-<li><a href="#nucleus-sampling">Nucleus Sampling</a></li>
-<li><a href="#tail-free-sampling">Tail-Free Sampling</a></li>
-<li><a href="#top-a-sampling">Top-A Sampling</a></li>
-<li><a href="#typical-sampling">Typical Sampling</a></li>
-<li><a href="#change-settings-order">Change Settings Order</a></li>
-</ul></li>
-<li><a href="#repetition-penalty-1">Repetition Penalty</a>
-<ul>
-<li><a href="#repetition-penalty-range">Repetition Penalty Range</a></li>
-<li><a href="#repetition-penalty-slope">Repetition Penalty Slope</a></li>
-</ul></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#generation-presets">Generation Presets</a></li>
+    <li><a href="#generation-options">Generation Options</a>
+    <ul>
+    <li><a href="#randomness-temperature">Randomness (Temperature)</a></li>
+    <li><a href="#output-length">Output Length</a></li>
+    <li><a href="#repetition-penalty">Repetition Penalty</a></li>
+    </ul></li>
+    <li><a href="#sampling">Sampling</a>
+    <ul>
+    <li><a href="#top-k-sampling">Top-K Sampling</a></li>
+    <li><a href="#nucleus-sampling">Nucleus Sampling</a></li>
+    <li><a href="#tail-free-sampling">Tail-Free Sampling</a></li>
+    <li><a href="#top-a-sampling">Top-A Sampling</a></li>
+    <li><a href="#typical-sampling">Typical Sampling</a></li>
+    <li><a href="#change-settings-order">Change Settings Order</a></li>
+    </ul></li>
+    <li><a href="#repetition-penalty-1">Repetition Penalty</a>
+    <ul>
+    <li><a href="#repetition-penalty-range">Repetition Penalty Range</a></li>
+    <li><a href="#repetition-penalty-slope">Repetition Penalty Slope</a></li>
+    </ul></li>
+    </ul>
 </nav>
+
+<main>
 <p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/144e3f9b-5275-4e4b-97a0-6e67524eaf1d" alt="image" /></p>
 <h2 id="generation-presets">Generation Presets</h2>
 <p>In order to make selecting the AI's various generation settings easier, NovelAI offers several generation presets.</p>
@@ -208,23 +208,6 @@
 <p>When <strong>Enabled</strong>, the Repetition Penalty is <strong>only applied to the story.</strong> All text injections (Lorebook, Author's Note, Memory, Ephemeral Context) will be <em>ignored</em> for the purposes of repetition penalty.</p>
 <h3 id="repetition-penalty-slope">Repetition Penalty Slope</h3>
 <p>The penalty to repeated tokens is applied differently based on distance from the final token. The distribution of that penalty follows a S-shaped curve. If the sloping is set to 0, that curve will be completely flat. All tokens will be penalized equally. If it is set to a very high value, it'll act more like two steps: Early tokens will receive little to no penalty, but later ones will be considerably penalized.</p>
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -322,5 +305,7 @@
   });
 
 </script>
+</main>
+
 </body>
 </html>

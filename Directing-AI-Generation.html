@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Directing AI Generation</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,30 +110,36 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">Directing AI Generation</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#tags--metadata">Tags &amp; Metadata</a>
-<ul>
-<li><a href="#categories">Categories</a></li>
-<li><a href="#layering">Layering</a></li>
-</ul></li>
-<li><a href="#tag-discovery">Tag Discovery</a>
-<ul>
-<li><a href="#formatting">Formatting</a></li>
-<li><a href="#tags-associated-with-an-author">Tags Associated with an Author</a></li>
-<li><a href="#authors-associated-with-a-tag">Authors Associated with a Tag</a></li>
-<li><a href="#tag-starting-a-prompt">Tag-starting a Prompt</a></li>
-<li><a href="#give-me-a-story-any-story">Give me a Story, any Story</a></li>
-<li><a href="#seeded-prompt-generation">Seeded Prompt Generation</a></li>
-</ul></li>
-<li><a href="#tips">Tips</a></li>
-<li><a href="#scaffolding">Scaffolding</a></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#tags--metadata">Tags &amp; Metadata</a>
+    <ul>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#layering">Layering</a></li>
+    </ul></li>
+    <li><a href="#tag-discovery">Tag Discovery</a>
+    <ul>
+    <li><a href="#formatting">Formatting</a></li>
+    <li><a href="#tags-associated-with-an-author">Tags Associated with an Author</a></li>
+    <li><a href="#authors-associated-with-a-tag">Authors Associated with a Tag</a></li>
+    <li><a href="#tag-starting-a-prompt">Tag-starting a Prompt</a></li>
+    <li><a href="#give-me-a-story-any-story">Give me a Story, any Story</a></li>
+    <li><a href="#seeded-prompt-generation">Seeded Prompt Generation</a></li>
+    </ul></li>
+    <li><a href="#tips">Tips</a></li>
+    <li><a href="#scaffolding">Scaffolding</a></li>
+    </ul>
 </nav>
+
+<main>
 <p><strong>This section is based on community findings using Sigurd V3. This is based on outdated information and mostly kept as a historical snapshot. Techniques shown here can apply to newer models but may have unexpected results..</strong></p>
 <p>Thanks go to <strong>Cass</strong> for putting together the initial draft, <strong>OccultSage</strong> for formatting and enriching this, <strong>Kalmarr</strong> and <strong>TravelingRobot</strong> for experimentation, and the folks of #community-research who went through hundred of permutations in the name of research!</p>
 <hr />
@@ -376,23 +376,6 @@ of the family.&quot;
 <p>This means that your story will be limited to 512 tokens, and the rest of the context will be filled with as much information as possible. <strong>All Forced Active entries will be inserted as ideally as possible.</strong> After that, it will be following the insertion order, going from the closest to 0, to the furthest from 0.</p>
 <p>You can adjust that scaffolding to your liking. If you don't need to define certain things, simply spend the token budget on others until you reach 2048-200 total tokens, or 1024-100 total tokens. (The context window is 1900 tokens on Krake.)</p>
 <p>Kalmarr offers several Scaffolding examples and more indepth information on his <a href="https://github.com/Kalmarr120/Kalmarr_NAI_Public/wiki/Format--and-Customization-Research#lorebook-settings">Research Page.</a></p>
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -490,5 +473,7 @@ of the family.&quot;
   });
 
 </script>
+</main>
+
 </body>
 </html>

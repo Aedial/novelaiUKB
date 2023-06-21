@@ -2,17 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Writing Help</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+  <link rel="stylesheet" href="css/skylighting-solarized-theme.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <!-- CSS added by filter 'toc-css.lua' for TOC hovering to the side -->
   <!-- TODO: try doing sometthing in px instead of cm to make it more device independent -->
   <style>
@@ -116,54 +110,60 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
+
+<header>
 <h1 class="title">Writing Help</h1>
+<blockquote class="metadata">
+</blockquote>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#interacting">Interacting</a>
-<ul>
-<li><a href="#absolute-phrasing">Absolute Phrasing</a></li>
-<li><a href="#ambiguous-phrasing">Ambiguous Phrasing</a></li>
-<li><a href="#dangling-prompts">Dangling Prompts</a></li>
-<li><a href="#indirect-intent">Indirect Intent</a></li>
-</ul></li>
-<li><a href="#getting-more-detail">Getting More Detail</a></li>
-<li><a href="#dialogue">Dialogue</a>
-<ul>
-<li><a href="#uncertain-speakers-in-dialogue">Uncertain Speakers in Dialogue</a></li>
-</ul></li>
-<li><a href="#keeping-track-keeping_track">Keeping Track {#keeping_track}</a>
-<ul>
-<li><a href="#what-to-add">What to Add</a></li>
-<li><a href="#when-to-take-notes">When to Take Notes</a></li>
-<li><a href="#working-with-the-lorebook-working_with_the_lorebook">Working with the Lorebook {#working_with_the_lorebook}</a></li>
-<li><a href="#how-to-format-memory-how_to_format_memory">How to Format Memory {#how_to_format_memory}</a></li>
-<li><a href="#why-the-ai-forgets">Why the AI Forgets</a></li>
-</ul></li>
-<li><a href="#perspective">Perspective</a>
-<ul>
-<li><a href="#first-person-first_person">First Person {#first_person}</a></li>
-<li><a href="#second-person-second_person">Second Person {#second_person}</a></li>
-<li><a href="#third-person-third_person">Third Person {#third_person}</a></li>
-<li><a href="#changing-perspective-changing_perspective">Changing Perspective {#changing_perspective}</a></li>
-</ul></li>
-<li><a href="#custom-pronouns-custom_pronouns">Custom Pronouns {#custom_pronouns}</a></li>
-<li><a href="#verbs">Verbs</a>
-<ul>
-<li><a href="#tenses">Tenses</a></li>
-<li><a href="#what-about-the-future-what_about_the_future">What about the future? {#what_about_the_future}</a></li>
-<li><a href="#aspect">Aspect</a></li>
-<li><a href="#modality">Modality</a></li>
-</ul></li>
-<li><a href="#steering-the-plot-steering_the_plot">Steering the Plot {#steering_the_plot}</a>
-<ul>
-<li><a href="#what-to-write-what_to_write">What to Write {#what_to_write}</a></li>
-</ul></li>
-<li><a href="#why-negation-and-denial-is-hard-why_negation_and_denial_is_hard">Why Negation and Denial is Hard {#why_negation_and_denial_is_hard}</a></li>
-</ul>
+
+  <nav id="TOC" role="doc-toc">
+      <h2 id="toc-title">Contents</h2>
+    <ul>
+    <li><a href="#interacting">Interacting</a>
+    <ul>
+    <li><a href="#absolute-phrasing">Absolute Phrasing</a></li>
+    <li><a href="#ambiguous-phrasing">Ambiguous Phrasing</a></li>
+    <li><a href="#dangling-prompts">Dangling Prompts</a></li>
+    <li><a href="#indirect-intent">Indirect Intent</a></li>
+    </ul></li>
+    <li><a href="#getting-more-detail">Getting More Detail</a></li>
+    <li><a href="#dialogue">Dialogue</a>
+    <ul>
+    <li><a href="#uncertain-speakers-in-dialogue">Uncertain Speakers in Dialogue</a></li>
+    </ul></li>
+    <li><a href="#keeping-track-keeping_track">Keeping Track {#keeping_track}</a>
+    <ul>
+    <li><a href="#what-to-add">What to Add</a></li>
+    <li><a href="#when-to-take-notes">When to Take Notes</a></li>
+    <li><a href="#working-with-the-lorebook-working_with_the_lorebook">Working with the Lorebook {#working_with_the_lorebook}</a></li>
+    <li><a href="#how-to-format-memory-how_to_format_memory">How to Format Memory {#how_to_format_memory}</a></li>
+    <li><a href="#why-the-ai-forgets">Why the AI Forgets</a></li>
+    </ul></li>
+    <li><a href="#perspective">Perspective</a>
+    <ul>
+    <li><a href="#first-person-first_person">First Person {#first_person}</a></li>
+    <li><a href="#second-person-second_person">Second Person {#second_person}</a></li>
+    <li><a href="#third-person-third_person">Third Person {#third_person}</a></li>
+    <li><a href="#changing-perspective-changing_perspective">Changing Perspective {#changing_perspective}</a></li>
+    </ul></li>
+    <li><a href="#custom-pronouns-custom_pronouns">Custom Pronouns {#custom_pronouns}</a></li>
+    <li><a href="#verbs">Verbs</a>
+    <ul>
+    <li><a href="#tenses">Tenses</a></li>
+    <li><a href="#what-about-the-future-what_about_the_future">What about the future? {#what_about_the_future}</a></li>
+    <li><a href="#aspect">Aspect</a></li>
+    <li><a href="#modality">Modality</a></li>
+    </ul></li>
+    <li><a href="#steering-the-plot-steering_the_plot">Steering the Plot {#steering_the_plot}</a>
+    <ul>
+    <li><a href="#what-to-write-what_to_write">What to Write {#what_to_write}</a></li>
+    </ul></li>
+    <li><a href="#why-negation-and-denial-is-hard-why_negation_and_denial_is_hard">Why Negation and Denial is Hard {#why_negation_and_denial_is_hard}</a></li>
+    </ul>
 </nav>
+
+<main>
 <p>This section seeks to explain in detail the finer points of using <em>NovelAI</em> to manage the world presented in your Story.</p>
 <h2 id="interacting">Interacting</h2>
 <p>At many points in your tales, you may find yourself wanting to directly influence the world around your protagonist. In these cases, there are a number of simple ways you can do so!</p>
@@ -426,23 +426,6 @@ This wasn&#39;t the first time I&#39;d hear the door.
 <p>If you feel the AI has issues dealing with a concept like this, try telling the AI what effects it has, again, trying to avoid negation as much as possible:</p>
 <pre><code>Johnathan is blind and can only see darkness. Johnathan must use his hearing and touch to locate people and objects. Johnathan&#39;s eyes are always closed.
 </code></pre>
-<!-- Javascript added by darkmode.lua to allow dark mode button -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    const darkmode_options = {
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      label: '🌓',
-    }
-
-    new Darkmode(darkmode_options).showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
@@ -540,5 +523,7 @@ This wasn&#39;t the first time I&#39;d hear the door.
   });
 
 </script>
+</main>
+
 </body>
 </html>
