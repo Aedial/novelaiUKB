@@ -91,27 +91,26 @@
 
   :root {
     /* --- Colors --- */
+    --background-color: #161313;
 
-    --background-color: #fff;
+    --color-text: #f7f5f2;
+    --color-text-secondary: #9d9b99;
+    --color-link: #bc805d;
+    --color-sidenote: #b4b2af;
 
-    --color-text: #1b2733;
-    --color-text-secondary: #637282;
-    --color-link: #0070e0;
-    --color-sidenote: #616970;
+    --highlight-red: #660000;
+    --highlight-yellow: #7f6000;
+    --highlight-green: #274e13;
+    --highlight-blue: #1c4587;
+    --highlight-purple: #351c75;
 
-    --highlight-red: #ea9999;
-    --highlight-yellow: #ffe599;
-    --highlight-green: #b6d7a8;
-    --highlight-blue: #a4c2f4;
-    --highlight-purple: #b4a7d6;
+    --color-inline-code: #f7f5f2;
+    --color-inline-code-bg: #242121;
 
-    --color-inline-code: #1b2733;
-    --color-inline-code-bg: #f3f3f8;
+    --color-border: #393635;
+    --color-border-heavy: #524f4d;
 
-    --color-border: #dfdfd0;
-    --color-border-heavy: #ccccd4;
-
-    --color-table-heading: #f3f3fb;
+    --color-table-heading: #242121;
 
     /* --- Text --- */
 
@@ -197,30 +196,6 @@
 
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-color: #161313;
-
-      --color-text: #f7f5f2;
-      --color-text-secondary: #9d9b99;
-      --color-link: #2994ff;
-      --color-sidenote: #b4b2af;
-
-      --highlight-red: #660000;
-      --highlight-yellow: #7f6000;
-      --highlight-green: #274e13;
-      --highlight-blue: #1c4587;
-      --highlight-purple: #351c75;
-
-      --color-inline-code: #f7f5f2;
-      --color-inline-code-bg: #242121;
-
-      --color-border: #393635;
-      --color-border-heavy: #524f4d;
-
-      --color-table-heading: #242121;
-    }
-  }
 
   *, *:after, *:before {
     box-sizing: border-box;
@@ -1340,7 +1315,7 @@
 <header>
 <h1 class="title">User Settings</h1>
 <blockquote class="metadata">
-  <p class="date before-toc"><time datetime="Last updated 24/06/2023 at 13:36">Last updated 24/06/2023 at 13:36</time></p>
+  <p class="date before-toc"><time datetime="Last updated 21/11/2023 at 20:18">Last updated 21/11/2023 at 20:18</time></p>
 </blockquote>
 </header>
 
@@ -1378,7 +1353,7 @@
 </ul>
 <ul>
 <li><p><strong>Continue Response to End of Sentence</strong>: If ON, the generation will continue for up to 20 tokens more or until it creates a sentence delimiter (. or ;)</p></li>
-<li><p><strong>Preamble</strong>: Adds a small amount of "marker" tokens before the entire context. This improves quality when the context window isn't full by telling the AI "this is a new story". <strong>If the context is empty, a preamble is always added even if this is set to OFF.</strong></p></li>
+<li><p><strong>Preamble</strong>: Adds a small amount of "marker" tokens before the entire context. This improves quality when the context window isn't full by telling the AI "this is a new story". <strong>If the context is empty, a preamble is always added even if this is set to OFF.</strong> Kayra does <strong>not</strong> use a Preamble in story mode, but instead has a specific module.</p></li>
 <li><p><strong>Trim Excess Whitespace</strong>: If a loose space or repeated newline is detected at the end of the text, it will be cleaned up. Trailing whitespace can cause generation inconsistency.</p></li>
 <li><p><strong>Max Context Size</strong>: If you have the <em>Scroll</em> or <em>Opus</em> Subscription plan, you can demo for users with less money to spend by forcing your context window to something smaller.</p></li>
 <li><p><strong>Default Bias</strong>: Some logit biases are applied by default to the Dinkus and Asterism to make their generation less likely. Turn this OFF to remove those biases and apply your own.</p></li>
@@ -1387,7 +1362,7 @@
 </ul>
 <hr />
 <h2 id="interface-tab">Interface Tab</h2>
-<p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/eaa8d27f-445b-4e42-a0c6-2829e0c63b9c" alt="image" /></p>
+<p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/58900a72-8938-4cfa-9881-688da962618c" alt="image" /></p>
 <ul>
 <li><strong>Gesture Controls</strong>: Enables swipe-based controls for the side tabs and the input box on mobile devices and touchscreens.</li>
 <li><strong>Swap Context Menu Controls</strong>: If on, use the NAI context menu on right click. Browser's default context menu is used if off.</li>
@@ -1399,7 +1374,12 @@
 <li><strong>Show lorebook keys in the output box</strong>: When enabled, text that triggered a lorebook key will be shown in <strong>bold</strong>. This can have a performance impact.</li>
 <li><strong>Show story title</strong>: Displays the title of the story at the top of the screen if enabled.</li>
 <li><strong>Show Tips</strong>: Displays tips under the story box if enabled.</li>
+<li><strong>Show Identicon</strong>: Each account has a randomly generated Identicon. If you turn this one, the Goose button at the top left which opens the toolbox will become the Identicon instead.</li>
+<li><strong>Show Minibar</strong>: Displays a small bar on the left side of the page, which allows you to quickly switch to your recently opened stories.</li>
 <li><strong>Use EditorV2 for new Stories</strong>: Turns on the Experimental Story Editor for any story created with this setting on. This allows for text formatting, a more mobile-friendly interface, mouse-only inline generations, and performance improvements. However, not all features are available currently, check the list when turning on this feature for more information.</li>
+<li><strong>Show Editor Toolbox</strong>: When using EditorV2, selecting text will open a custom mini-menu which allows you to quickly format text, generate at this specific spot, use Text to Speech, and open NAI's dropdown menu.</li>
+<li><strong>Highlight Speech</strong>: When enabled, turns text between quotes into italics. If Inverted is selected, text between quotes will not be formatted, but everything else will be in italics.</li>
+<li><strong>Paragraph Visibility Range</strong>: Measures, in <strong>pixels</strong>, the vertical range <strong>beyond the visible screen area</strong> inside which text will be kept into memory. Anything else will be unloaded, saving performance. If this is set to an extremely high value, it may cause your browser to lag!</li>
 </ul>
 <h2 id="theme">Theme</h2>
 <p>Consult <a href="Theming.html">Theming</a> for more information on this feature.</p>

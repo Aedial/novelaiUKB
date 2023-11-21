@@ -91,27 +91,26 @@
 
   :root {
     /* --- Colors --- */
+    --background-color: #161313;
 
-    --background-color: #fff;
+    --color-text: #f7f5f2;
+    --color-text-secondary: #9d9b99;
+    --color-link: #bc805d;
+    --color-sidenote: #b4b2af;
 
-    --color-text: #1b2733;
-    --color-text-secondary: #637282;
-    --color-link: #0070e0;
-    --color-sidenote: #616970;
+    --highlight-red: #660000;
+    --highlight-yellow: #7f6000;
+    --highlight-green: #274e13;
+    --highlight-blue: #1c4587;
+    --highlight-purple: #351c75;
 
-    --highlight-red: #ea9999;
-    --highlight-yellow: #ffe599;
-    --highlight-green: #b6d7a8;
-    --highlight-blue: #a4c2f4;
-    --highlight-purple: #b4a7d6;
+    --color-inline-code: #f7f5f2;
+    --color-inline-code-bg: #242121;
 
-    --color-inline-code: #1b2733;
-    --color-inline-code-bg: #f3f3f8;
+    --color-border: #393635;
+    --color-border-heavy: #524f4d;
 
-    --color-border: #dfdfd0;
-    --color-border-heavy: #ccccd4;
-
-    --color-table-heading: #f3f3fb;
+    --color-table-heading: #242121;
 
     /* --- Text --- */
 
@@ -197,30 +196,6 @@
 
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-color: #161313;
-
-      --color-text: #f7f5f2;
-      --color-text-secondary: #9d9b99;
-      --color-link: #2994ff;
-      --color-sidenote: #b4b2af;
-
-      --highlight-red: #660000;
-      --highlight-yellow: #7f6000;
-      --highlight-green: #274e13;
-      --highlight-blue: #1c4587;
-      --highlight-purple: #351c75;
-
-      --color-inline-code: #f7f5f2;
-      --color-inline-code-bg: #242121;
-
-      --color-border: #393635;
-      --color-border-heavy: #524f4d;
-
-      --color-table-heading: #242121;
-    }
-  }
 
   *, *:after, *:before {
     box-sizing: border-box;
@@ -1340,13 +1315,16 @@
 <header>
 <h1 class="title">Lorebook</h1>
 <blockquote class="metadata">
-  <p class="date before-toc"><time datetime="Last updated 24/06/2023 at 13:36">Last updated 24/06/2023 at 13:36</time></p>
+  <p class="date before-toc"><time datetime="Last updated 21/11/2023 at 20:18">Last updated 21/11/2023 at 20:18</time></p>
 </blockquote>
 </header>
 
   <nav id="TOC" role="doc-toc">
       <h2 id="toc-title">Contents</h2>
     <ul>
+    <li><a href="#entries">Entries</a></li>
+    <li><a href="#keys">Keys</a></li>
+    <li><a href="#lore-generation">Lore Generation</a></li>
     <li><a href="#categories">Categories</a></li>
     <li><a href="#placement-tab">Placement Tab</a></li>
     <li><a href="#lorebook-phrase-bias">Lorebook Phrase Bias</a></li>
@@ -1366,18 +1344,18 @@
 <p>You will be presented with this window:</p>
 <p><img src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/d282d815-2e83-425b-a2f4-1e5d41b65c6b" alt="image" /></p>
 <hr />
-<h4 id="entries">Entries</h4>
+<h3 id="entries">Entries</h3>
 <p>A lore entry is composed of two main elements: <strong>Entry Text</strong> and <strong>Keys</strong>.</p>
 <p>The <strong>Entry Text</strong> is what will be injected into the context window when a <strong>Key</strong> is triggered. Balancing out the density of this content with the remaining space in your context window is important.</p>
 <p>The <strong>Default Settings</strong> will be applied to all new entries, but they can be changed after creation.</p>
 <p>You can mass-select entries with the checkbox ☑️ to <strong>delete</strong> 🗑️, <strong>export</strong> 📤, or <strong>export to image</strong> 🖼️ several entries at once.</p>
-<h4 id="keys">Keys</h4>
+<h3 id="keys">Keys</h3>
 <p><strong>Enabled</strong> determines if the entry will be inserted in the context if detected. If it is disabled, it won't trigger regardless of keys. This is useful to reduce context cluttering if you don't need details about specific things.</p>
 <p><strong>Keys</strong> are all the <strong>words that the AI will associate with this entry.</strong> If the AI reads this word, then the connected entry will be inserted in the context. Keys are <em>case insensitive.</em></p>
 <p>Type the key and press <strong>Enter</strong> to register it. Keys are <strong>case insensitive by default.</strong></p>
 <p>To make a Key case-sensitive, preface it with <code>/</code> and close it by <code>/</code>: <code>/Entry/</code>.</p>
 <p>If it is part of a placeholder, add a <strong>$</strong> at the very beginning before the first dash.</p>
-<h4 id="lore-generation">Lore Generation</h4>
+<h3 id="lore-generation">Lore Generation</h3>
 <p>Click the 💡 <strong>Generate</strong> button to enter the <a href="Lorebook.html#lore-generator">Lore Generator</a>.</p>
 <hr />
 <h2 id="categories">Categories</h2>
@@ -1400,6 +1378,7 @@
 <p>You may also use a <code>\n</code> (a <strong>newline marker</strong>), which helps isolate the entry further by separating it with a full newline.</p>
 <ul>
 <li><strong>Token Budget:</strong> Keeps this number of tokens in the context window for this entry. <em>This will overwrite other content if necessary!</em> It's recommended to set it a litter lower than the entry's full size.</li>
+<li><strong>Reserved Tokens:</strong> Preserves this many tokens for this entry. This does not need to be equal to the size of the entry itself, you can set this limit to specifically cover a part of it. If this value is <strong>between 0 and 1 inclusive</strong> (i.e 0.2, 0.5...) then this will be interpreted as a <strong>percentage of the total context size</strong>.</li>
 <li><strong>Insertion Order:</strong> The higher this number, the earlier the entry is processed. Entries with a low value may be dropped to save space for those with a higher value. If you have three entries, with order <em>500,0 and -500</em>, they will be processed from highest (500) to lowest (-500).</li>
 <li><strong>Insertion Position:</strong> How far <em>from the top</em> (if positive) or <em>the bottom</em> (if negative) will the entry be inserted in the window. The unit is defined in <strong>Insertion Type</strong>. It can be a number of <strong>tokens</strong>, <strong>sentences</strong>, and <strong>newlines</strong>.</li>
 </ul>

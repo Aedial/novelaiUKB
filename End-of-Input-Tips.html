@@ -91,27 +91,26 @@
 
   :root {
     /* --- Colors --- */
+    --background-color: #161313;
 
-    --background-color: #fff;
+    --color-text: #f7f5f2;
+    --color-text-secondary: #9d9b99;
+    --color-link: #bc805d;
+    --color-sidenote: #b4b2af;
 
-    --color-text: #1b2733;
-    --color-text-secondary: #637282;
-    --color-link: #0070e0;
-    --color-sidenote: #616970;
+    --highlight-red: #660000;
+    --highlight-yellow: #7f6000;
+    --highlight-green: #274e13;
+    --highlight-blue: #1c4587;
+    --highlight-purple: #351c75;
 
-    --highlight-red: #ea9999;
-    --highlight-yellow: #ffe599;
-    --highlight-green: #b6d7a8;
-    --highlight-blue: #a4c2f4;
-    --highlight-purple: #b4a7d6;
+    --color-inline-code: #f7f5f2;
+    --color-inline-code-bg: #242121;
 
-    --color-inline-code: #1b2733;
-    --color-inline-code-bg: #f3f3f8;
+    --color-border: #393635;
+    --color-border-heavy: #524f4d;
 
-    --color-border: #dfdfd0;
-    --color-border-heavy: #ccccd4;
-
-    --color-table-heading: #f3f3fb;
+    --color-table-heading: #242121;
 
     /* --- Text --- */
 
@@ -197,30 +196,6 @@
 
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-color: #161313;
-
-      --color-text: #f7f5f2;
-      --color-text-secondary: #9d9b99;
-      --color-link: #2994ff;
-      --color-sidenote: #b4b2af;
-
-      --highlight-red: #660000;
-      --highlight-yellow: #7f6000;
-      --highlight-green: #274e13;
-      --highlight-blue: #1c4587;
-      --highlight-purple: #351c75;
-
-      --color-inline-code: #f7f5f2;
-      --color-inline-code-bg: #242121;
-
-      --color-border: #393635;
-      --color-border-heavy: #524f4d;
-
-      --color-table-heading: #242121;
-    }
-  }
 
   *, *:after, *:before {
     box-sizing: border-box;
@@ -1340,7 +1315,7 @@
 <header>
 <h1 class="title">End of Input Tips</h1>
 <blockquote class="metadata">
-  <p class="date before-toc"><time datetime="Last updated 24/06/2023 at 13:36">Last updated 24/06/2023 at 13:36</time></p>
+  <p class="date before-toc"><time datetime="Last updated 21/11/2023 at 20:18">Last updated 21/11/2023 at 20:18</time></p>
 </blockquote>
 </header>
 
@@ -1350,14 +1325,15 @@
     <li><a href="#the-importance-of-the-final-token">The Importance of the Final Token</a></li>
     <li><a href="#typography-symbols">Typography Symbols</a>
     <ul>
-    <li><a href="#basic-symbols-basic_symbols">Basic Symbols {#basic_symbols}</a></li>
-    <li><a href="#other-symbols">Other Symbols</a></li>
+    <li><a href="#basic-symbols">Basic Symbols</a></li>
+    <li><a href="#whitespace">Whitespace</a></li>
+    <li><a href="#encasers">Encasers</a></li>
+    <li><a href="#headers">Headers</a></li>
     </ul></li>
     </ul>
 </nav>
 
 <main>
-<p><strong>This page was conceived during the Euterpe Era of NovelAI. Some tech here might not be relevant anymore, but some tips can still be useful. Refer to <a href="The-Rabbit-Hole-(Clio).html">The Rabbit Hole (Clio)</a> For the current model.</strong></p>
 <p>This page contains <strong>community-researched</strong> content and aims to provide in-depth tips to improve your experience with the AI.</p>
 <p>This is an <strong>expert</strong> guide. There will be much less hand-holding from now on. Terms and tools will not be explained if they were defined in the feature pages and <a href="Writing-Help.html">Writing Help</a>, so make sure you have fully read these two pages before continuing.</p>
 <hr />
@@ -1383,8 +1359,8 @@
 <p>The conclusion here is that <strong>you should initiate for the AI as much as possible, even if it's using a single symbol to do so.</strong> Any sort of hand-holding helps the AI stay on track much better than leaving it to its own devices and expecting it to guess what you want. (Hint: it won't.)</p>
 <hr />
 <h2 id="typography-symbols">Typography Symbols</h2>
-<p>There is a wealth of**<a href="https://en.wikipedia.org/wiki/Category:Typographical_symbols">Symbols</a>** used in books that we can make use of.</p>
-<h3 id="basic-symbols-basic_symbols">Basic Symbols {#basic_symbols}</h3>
+<p>There is a wealth of <strong><a href="https://en.wikipedia.org/wiki/Category:Typographical_symbols">Symbols</a></strong> used in books that we can make use of.</p>
+<h3 id="basic-symbols">Basic Symbols</h3>
 <p>Let's starts with the basics. English mostly uses 7 punctuation marks.</p>
 <ul>
 <li><p>The <strong>Period</strong> ( . ) symbolizes the end of a sentence.</p>
@@ -1425,7 +1401,7 @@
 <li>Good for switching the tone to something "louder", making characters scream, get upset, excitable narration, so on and so forth.</li>
 </ul></li>
 </ul>
-<p>=== Whitespace ===</p>
+<h3 id="whitespace">Whitespace</h3>
 <p>This is basically any character like spaces and linebreaks.</p>
 <ul>
 <li><p><strong>Single Spaces</strong> should be kept away from the end of your text.</p>
@@ -1445,54 +1421,58 @@
 <li><strong>Avoid those as much as possible unless going for special formatting. Their effect on writing quality is noticeable.</strong></li>
 </ul></li>
 </ul>
-<h3 id="other-symbols">Other Symbols</h3>
-<p>These are used more specifically in NovelAI due to how its finetune is prepared.</p>
+<h3 id="encasers">Encasers</h3>
 <ul>
 <li><p><strong>Parentheses</strong> ( ) are used to denote side comments or side thoughts.</p>
 <ul>
 <li>These can change the writing style a little, but make sure not to abuse them.</li>
 </ul></li>
-<li><p><strong>Brackets</strong> [ ] in NovelAI are a little special because they are banned from generation by default. They can be used as markers for <strong>notes outside of the main text</strong>.</p>
+<li><p><strong>Brackets</strong> [ ] in NovelAI are a little special because they are banned from generation by default. They can be used as markers for <strong>notes outside of the main text</strong>. Extensively detailed in <a href="https://tapwavezodiac.github.io/novelaiUKB/The-Rabbit-Hole.html#stage-directions">The Rabbit Hole</a>.</p>
 <ul>
 <li>Keep in mind that you need to put <strong>spaces after opening brackets and before closing brackets for them to work properly.</strong></li>
-<li>Usually found at the beginning of chapters, square brackets can be used to set the scene, as in <code>[ London, 1820 ]</code>.</li>
-<li>They can be used to easily switch the protagonist mid-story, if you insert the name of the character in brackets on a new row, as in <code>[ John ]</code>.</li>
-<li>They may also be used to influence the direction of the story or give details --- think stage directions --- though this is not the intended usage.</li>
-</ul></li>
-<li><p><strong>Curly Braces</strong> { } are usually used in code and very uncommon in anything that isn't math or computing related.</p>
-<ul>
-<li>Thus, you can use them to talk about those subjects.</li>
-<li>They are used for "strict" token selections for Ban Token and Phrase Bias.</li>
-<li>Snek uses them extensively to generate Python code.</li>
-</ul></li>
-<li><p><strong>Bullet Points</strong> • are used to mark elements of a list. One per line.</p></li>
-<li><p><strong>Single dashes</strong> ( - ) are used for discrete lists.</p>
-<ul>
-<li>Very practical if you want to present neatly indented lists.</li>
+<li>If you want to give instructions to the AI, use a curly brace instead.</li>
 </ul></li>
 <li><p><strong>Less Than and More Than</strong> &lt; &gt; are used in the finetune to <em>encase telepathic communication, or thoughts.</em></p>
 <ul>
 <li>As such, you can use them to denote when a character is thinking.</li>
 </ul></li>
-<li><p><strong>More Than</strong> ( &gt; ) When used to start a new row, &gt; denotes text and computer console messages. It is also used by Text Adventure, though it's not always displayed.</p></li>
-<li><p>The hilariously named <strong>Dinkus</strong> ( ** ) is a symbol used to denote a section break in a text.</p>
+<li><p><strong>Curly Braces</strong> { } are used specifically for instructions in Kayra. For other models, they are used for code.</p>
 <ul>
-<li>Consider it as powerful "break from current scene" device.</li>
-<li>Often interpreted as a time skip or even a switch to a different character, depending on the preceding text. Experiment.</li>
+<li>You only need to open the brace, not close it.</li>
+<li>Snek uses them extensively to generate Python code.</li>
 </ul></li>
+</ul>
+<h3 id="headers">Headers</h3>
+<ul>
+<li><p><strong>Bullet Points</strong> ( • ) are used to mark elements of a list. One per line.</p></li>
+<li><p><strong>Single dashes</strong> ( - ) are used for discrete lists.</p>
+<ul>
+<li>Very practical if you want to present neatly indented lists.</li>
+</ul></li>
+<li><p><strong>More Than</strong> ( &gt; ) When used to start a new row, &gt; denotes text and computer console messages. It is also used by Text Adventure, though it's not always displayed.</p></li>
+<li><p><strong>Em Dash</strong> ( ─ ) is used for LitRPG format, such as stat blocks and MMORPG style skills.</p>
+<ul>
+<li>Note that this heavily influences the output, usually making the protagonist aware that they're in a game-like world.</li>
+</ul></li>
+<li><p><strong>Double pound sign</strong> ( ## ) is used for commented out text that will not be processed by the AI.</p>
+<ul>
+<li>Any paragraph starting with a double pound sign will not be considered part of the context.</li>
+</ul></li>
+</ul>
+<h4 id="separators">Separators</h4>
+<ul>
+<li><p><strong>Dinkuses</strong> ( <code>***</code> ) are used to denote a section break in a text, and separate stories. - Consider it as powerful "break from current scene" device. - Often interpreted as a time skip or even a switch to a different character, depending on the preceding text. Experiment.</p></li>
 <li><p><strong>Asterisms</strong> (⁂) are a symbol used to separate sections of a single text, but for NovelAI, it's used to separate <em>whole texts.</em>. It is also the symbol used if you append a Preface to your text.</p>
 <ul>
 <li>As a result, it has a very strong "breaking from current scene" effect.</li>
 <li>Note that an asterism is almost always followed by square brackets in the data (containing the story title etc) and as such this does not function well when the bracket ban is enabled.</li>
 </ul></li>
-<li><p><strong>Horizontal line</strong> ( ─ ) is used for LitRPG format, such as stat blocks and MMORPG style skills.</p>
-<ul>
-<li>Note that this heavily influences the output, usually making the protagonist aware that they're in a game-like world.</li>
-</ul></li>
-<li><p><strong>Em space</strong> (   ) is used for poetry and lyrics.</p>
-<ul>
-<li>Simply starting a new row with this will typically generate a poem.</li>
-</ul></li>
+<li><p><strong>Four dashes</strong> (----) are used to separate blocks of non-story data, and Attribute blocks. - To return to Story text, use a Dinkus (***).</p></li>
+<li><p><strong>Six equal signs</strong> or "double bar" (======) are used to separate forum posts or email blocks. - Optionally combine with <code>Thread: (thread name)</code> before the first double bar to set its subject. - Follow the double bar immediately on the <strong>next line</strong> with the user name.</p>
+<pre><code>Thread: What&#39;s the deal with airline food?
+======
+Seinfeld
+</code></pre></li>
 </ul>
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->

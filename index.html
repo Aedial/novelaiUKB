@@ -91,27 +91,26 @@
 
   :root {
     /* --- Colors --- */
+    --background-color: #161313;
 
-    --background-color: #fff;
+    --color-text: #f7f5f2;
+    --color-text-secondary: #9d9b99;
+    --color-link: #bc805d;
+    --color-sidenote: #b4b2af;
 
-    --color-text: #1b2733;
-    --color-text-secondary: #637282;
-    --color-link: #0070e0;
-    --color-sidenote: #616970;
+    --highlight-red: #660000;
+    --highlight-yellow: #7f6000;
+    --highlight-green: #274e13;
+    --highlight-blue: #1c4587;
+    --highlight-purple: #351c75;
 
-    --highlight-red: #ea9999;
-    --highlight-yellow: #ffe599;
-    --highlight-green: #b6d7a8;
-    --highlight-blue: #a4c2f4;
-    --highlight-purple: #b4a7d6;
+    --color-inline-code: #f7f5f2;
+    --color-inline-code-bg: #242121;
 
-    --color-inline-code: #1b2733;
-    --color-inline-code-bg: #f3f3f8;
+    --color-border: #393635;
+    --color-border-heavy: #524f4d;
 
-    --color-border: #dfdfd0;
-    --color-border-heavy: #ccccd4;
-
-    --color-table-heading: #f3f3fb;
+    --color-table-heading: #242121;
 
     /* --- Text --- */
 
@@ -197,30 +196,6 @@
 
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-color: #161313;
-
-      --color-text: #f7f5f2;
-      --color-text-secondary: #9d9b99;
-      --color-link: #2994ff;
-      --color-sidenote: #b4b2af;
-
-      --highlight-red: #660000;
-      --highlight-yellow: #7f6000;
-      --highlight-green: #274e13;
-      --highlight-blue: #1c4587;
-      --highlight-purple: #351c75;
-
-      --color-inline-code: #f7f5f2;
-      --color-inline-code-bg: #242121;
-
-      --color-border: #393635;
-      --color-border-heavy: #524f4d;
-
-      --color-table-heading: #242121;
-    }
-  }
 
   *, *:after, *:before {
     box-sizing: border-box;
@@ -1340,14 +1315,15 @@
 <header>
 <h1 class="title">index</h1>
 <blockquote class="metadata">
-  <p class="date before-toc"><time datetime="Last updated 24/06/2023 at 13:36">Last updated 24/06/2023 at 13:36</time></p>
+  <p class="date before-toc"><time datetime="Last updated 21/11/2023 at 20:18">Last updated 21/11/2023 at 20:18</time></p>
 </blockquote>
 </header>
 
   <nav id="TOC" role="doc-toc">
       <h2 id="toc-title">Contents</h2>
     <ul>
-    <li><a href="#-quickstart"><strong>💡 <span>Quickstart</span></strong></a>
+    <li><a href="#-quickstart"><strong>💡 <span>Quickstart</span></strong></a></li>
+    <li><a href="#-starting-your-first-story-in-novelai"><strong>🔰 <span>Starting your First Story in NovelAI</span></strong></a>
     <ul>
     <li><a href="#-glossary"><strong>🔠 <span>Glossary</span></strong></a></li>
     <li><a href="#-useful-links--resources">🔗 Useful Links &amp; Resources</a></li>
@@ -1365,6 +1341,7 @@
     <li><a href="#ai-writing">AI Writing</a>
     <ul>
     <li><a href="#-end-of-input-tips"><strong>👨‍🏫 <span>End of Input Tips</span></strong></a></li>
+    <li><a href="#-the-rabbit-hole"><strong>🐇 <span>The Rabbit Hole</span></strong></a></li>
     <li><a href="#️-narrative-example-tutorial-outdated"><strong>✒️ <span>Narrative Example Tutorial</span></strong> (Outdated)</a></li>
     <li><a href="#️-directing-the-narrative"><strong>🖊️ <span>Directing the Narrative</span></strong></a></li>
     <li><a href="#-lorebook-generation-tutorial"><strong>💻 <span>Lorebook Generation Tutorial</span></strong></a></li>
@@ -1396,6 +1373,8 @@
 <p><strong><em>NovelAI</em> is a living project. Information may become out of date, or inaccurate.</strong> While some content is reviewed by developers, this is NOT an official resource. <em>NovelAI</em> is not accountable for any content on this site.</p>
 <h1 id="-quickstart"><strong>💡 <a href="Quickstart.html">Quickstart</a></strong></h1>
 <p>This guide offers a comprehensive beginner's overlook on using NovelAI.</p>
+<h1 id="-starting-your-first-story-in-novelai"><strong>🔰 <a href="Starting-your-first-story-in-NovelAI.html">Starting your First Story in NovelAI</a></strong></h1>
+<p>A quick crash course on all the general use techniques you may have heard of.</p>
 <h2 id="-glossary"><strong>🔠 <a href="Glossary.html">Glossary</a></strong></h2>
 <h2 id="-useful-links--resources">🔗 Useful Links &amp; Resources</h2>
 <ul>
@@ -1434,10 +1413,10 @@
 <h4 id="️-generation-settings"><strong>🎚️ <a href="Generation-Settings.html">Generation Settings</a></strong></h4>
 <p>Temperature, Sampling and penalties.</p>
 <hr />
-<h4 id="-scenarios"><strong>🤝 <a href="Sharing.html">Scenarios</a></strong></h4>
+<h4 id="-scenarios"><strong>🤝 <a href="Scenarios.html">Scenarios</a></strong></h4>
 <p>Share scenarios to let your users customize their experience.</p>
 <hr />
-<h4 id="-user-settings"><strong>🧰 <a href="User-settings.html">User Settings</a></strong></h4>
+<h4 id="-user-settings"><strong>🧰 <a href="User-Settings.html">User Settings</a></strong></h4>
 <p>All the settings that can be accessed from the Account Settings menu.</p>
 <hr />
 <h4 id="-tools"><strong>🔧 <a href="Tools.html">Tools</a></strong></h4>
@@ -1462,6 +1441,7 @@
 <hr />
 <h2 id="ai-writing">AI Writing</h2>
 <h3 id="-end-of-input-tips"><strong>👨‍🏫 <a href="End-of-Input-Tips.html">End of Input Tips</a></strong></h3>
+<h3 id="-the-rabbit-hole"><strong>🐇 <a href="The-Rabbit-Hole.html">The Rabbit Hole</a></strong></h3>
 <h3 id="️-narrative-example-tutorial-outdated"><strong>✒️ <a href="Narrative-Example-Tutorial.html">Narrative Example Tutorial</a></strong> (Outdated)</h3>
 <h3 id="️-directing-the-narrative"><strong>🖊️ <a href="Directing-the-Narrative.html">Directing the Narrative</a></strong></h3>
 <h3 id="-lorebook-generation-tutorial"><strong>💻 <a href="Lorebook-Generation-Tutorial.html">Lorebook Generation Tutorial</a></strong></h3>
