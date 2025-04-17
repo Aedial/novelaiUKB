@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Story Settings</title>
+  <title>Using Attributes</title>
   <style>
   /*
   To be used for Custom CSS, kept separate to distinguish it from Stylses sourced elsewhere
@@ -1330,8 +1330,8 @@
 <body>
 
 <header>
-<a href="." forTitle="Story Settings">Return to Index</a>
-<h1 class="title">Story Settings</h1>
+<a href="." forTitle="Using Attributes">Return to Index</a>
+<h1 class="title">Using Attributes</h1>
 <blockquote class="metadata">
   <p class="date before-toc"><time datetime="Last updated 09/04/2025 at
 20:31">Last updated 09/04/2025 at 20:31</time></p>
@@ -1341,192 +1341,280 @@
   <nav id="TOC" role="doc-toc">
       <h2 id="toc-title">Contents</h2>
     <ul>
-    <li><a href="#ai-model" id="toc-ai-model">AI Model</a>
+    <li><a href="#the-attributes-method"
+    id="toc-the-attributes-method">The Attributes Method</a>
     <ul>
-    <li><a href="#ai-module" id="toc-ai-module">AI Module</a></li>
-    <li><a href="#storys-memory" id="toc-storys-memory">Story's
-    Memory</a></li>
-    <li><a href="#storys-authors-note"
-    id="toc-storys-authors-note">Story's Author's Note</a></li>
-    <li><a href="#lorebook-quick-access"
-    id="toc-lorebook-quick-access">Lorebook Quick Access</a></li>
-    <li><a href="#story-stats" id="toc-story-stats">Story Stats</a></li>
-    <li><a href="#exporting-the-story"
-    id="toc-exporting-the-story">Exporting the Story</a></li>
-    <li><a href="#screenshot-designer"
-    id="toc-screenshot-designer">Screenshot Designer</a></li>
+    <li><a href="#the-purpose-of-attributes"
+    id="toc-the-purpose-of-attributes">The purpose of
+    Attributes</a></li>
+    <li><a href="#building-attribute-entries"
+    id="toc-building-attribute-entries">Building Attribute entries</a>
+    <ul>
+    <li><a href="#ordering-attributes"
+    id="toc-ordering-attributes">Ordering Attributes</a></li>
+    <li><a href="#writing-attributes"
+    id="toc-writing-attributes">Writing Attributes</a></li>
+    </ul></li>
+    </ul></li>
+    <li><a href="#attributes-entry-example"
+    id="toc-attributes-entry-example">Attributes Entry Example</a>
+    <ul>
+    <li><a href="#level-i---basic-attributes"
+    id="toc-level-i---basic-attributes">Level I - Basic
+    Attributes</a></li>
+    <li><a href="#level-ii---personality"
+    id="toc-level-ii---personality">Level II - Personality</a></li>
+    <li><a href="#level-iii---reputation-and-factions"
+    id="toc-level-iii---reputation-and-factions">Level III - Reputation
+    and Factions</a></li>
+    <li><a href="#level-iv---preferences-and-relations"
+    id="toc-level-iv---preferences-and-relations">Level IV - Preferences
+    and Relations</a></li>
+    </ul></li>
+    <li><a href="#advanced-examples" id="toc-advanced-examples">Advanced
+    Examples</a>
+    <ul>
+    <li><a href="#advanced---full-fantasy-character-entry"
+    id="toc-advanced---full-fantasy-character-entry">Advanced - Full
+    Fantasy Character Entry</a></li>
+    <li><a href="#advanced---space-politician"
+    id="toc-advanced---space-politician">Advanced - Space
+    Politician</a></li>
+    <li><a href="#advanced---nation-state"
+    id="toc-advanced---nation-state">Advanced - Nation-state</a></li>
+    <li><a href="#advanced---legendary-artifact"
+    id="toc-advanced---legendary-artifact">Advanced - Legendary
+    Artifact</a></li>
     </ul></li>
     </ul>
-  <a href="." forTitle="Story Settings">Return to Index</a>
+  <a href="." forTitle="Using Attributes">Return to Index</a>
 </nav>
 
 <main>
-<p><img
-src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/f87c7c56-2b1e-423e-879e-ca9e272d996b"
-alt="image" /></p>
-<p>This section of the interface controls settings <strong>specific to
-your currently active Story</strong>. There are three tabs here -
-<strong>Story</strong> and <strong>Advanced</strong> and
-<strong>Generation Settings</strong>. This page focuses on the
-first.</p>
-<h2 id="ai-model">AI Model</h2>
-<p>Allows you to choose between the following models:</p>
-<ul>
-<li><strong>Kayra</strong>, a fine-tuned NAI-LM 13B model.</li>
-<li><strong>Clio</strong>, a fine-tuned NAI-LM 3B model.</li>
-<li><strong>Krake</strong>, a fine-tuned GPT-NeoX 20B model. (Only
-available on Opus.)</li>
-<li><strong>Euterpe</strong>, a fine-tuned Fairseq GPT-13B model.</li>
-<li><strong>Sigurd</strong>, a fine-tuned GPT-J 6B model.</li>
-<li><strong>Calliope</strong>, the original fine-tuned 2.7B GPT-NEO
-model used in the Alpha.</li>
-<li><strong>Snek</strong>, a fine-tuned GPT-J 6B model trained
-specifically for Python output.</li>
-<li><strong>Genji</strong>, a fine-tuned GPT-J 6B model trained for
-Japanese output based on Japanese Light Novels.</li>
-</ul>
-<p>As a reminder, parameter count is <strong>not representative of
-quality</strong> - Clio has superior performance in spite of its lower
-parameter count.</p>
-<h3 id="ai-module">AI Module</h3>
-<p><strong>AI Modules</strong> are data modules that are inserted into
-the AI's memory in order to influence the text it will generate. These
-modules <strong>reduce the total context space by twenty tokens when in
-use</strong>, but are not tokens in themselves.</p>
-<p>Each module is similar to a "mini-fine-tune", a corpus of text that
-was used to adjust the AI based on how it is written. Different modules
-have different effects, which depend on your own writing and the ideas,
-characters and scenarios you write about.</p>
-<h4 id="older-models">Older Models</h4>
-<p>For <strong>Krake, Euterpe and Sigurd</strong>, There are three types
-of modules: <strong>Style</strong>, <strong>Theme</strong> and
-<strong>Inspiration</strong>.</p>
-<ul>
-<li>Styles are based on multiple works from the same author.</li>
-<li>Themes are based on multiple works, from multiple authors, but from
-the same genre.</li>
-<li>Inspirations are based on a singular, specific work, from a single
-author.</li>
-<li>Special are for specific occasions or have different purposes in
-mind than normal storywriting.</li>
-</ul>
-<p>Experiment to find what works best with what you enjoy and want to
-write about!</p>
-<p>Further information on cleaning and preparing a dataset for use in
-training AI Modules can be found at the <a
-href="Datasetting-for-AI-Modules.html">Datasetting for AI Modules</a>
-section.</p>
-<h4 id="newer-models">Newer Models</h4>
-<p>For <strong>Clio and Kayra</strong>, there are only <em>two</em>
-modules you can specifically set, outside of Text Adventure mode:</p>
-<ul>
-<li><strong>Instruct</strong> lets you give instructions to the AI
-directly by encasing your request paragraph between {curly braces}. The
-AI will signal the end of its performance with
-<strong>{{}}</strong>.</li>
-<li><strong>Prose Enhancer</strong> helps increase the complexity of the
-AI's output and requires no special priming.</li>
-</ul>
-<p>There are two modules that cannot be selected,
-<strong>Openings</strong>, which replaces the old Preamble and helps
-start stories, and <strong>Pedia</strong>, which is used for
-Attributes-like entry generation.</p>
-<p>These modules are automatically loaded if the following conditions
-are present:</p>
-<pre><code>Priority: instruct&gt;pedia&gt;openings
-
-Instruct Module
-IF a paragraph that ends within the last 1000 characters starts with { and ends with }
-
-Pedia Module
-IF no module selected
-AND IF one of the last three lines is &quot;----&quot;
-AND IF no line after the &quot;----&quot; is &quot;***&quot;
-
-
-Openings Module
-IF no module selected
-AND IF context is less than 200 tokens
-UNLESS ( the first line of context is &quot;======&quot;
-OR any line of the context contains &quot;Style:&quot; or &quot;Knowledge:&quot;
-OR any line of the context contains &quot;Tags:&quot; and &quot;pedia&quot;
-OR the first line starts with [ but is not followed by &quot; Author:&quot;, &quot; Title:&quot;, &quot; Tags:&quot;, or &quot; Genre:&quot; )</code></pre>
+<h1 id="the-attributes-method">The Attributes Method</h1>
+<p>When trying to create your Lorebook, someone may have suggested the
+"Attributes Method". We mentioned it in the Starter guide. This page
+will explain it in further detail, so that you can feel more confident
+creating your entries.</p>
+<h2 id="the-purpose-of-attributes">The purpose of Attributes</h2>
+<p>The idea behind the Attributes method is to simplify how you organize
+the description of important elements in your story. While Attributes
+were originally designed with characters in mind, <strong>Attributes can
+be used for anything.</strong> By using Attributes, you can use the
+training of NovelAI's models to your advantage, as it is used in their
+finetune material.</p>
 <hr />
-<h3 id="storys-memory">Story's Memory</h3>
-<p>Injects this text at the top of the context. Helpful to keep the AI
-on track with important information to keep in mind, as well as the
-<strong>Author, Title, Tags, Genre</strong> setup. More information on
-how to use this can be found in the <a
-href="Context.html#injected-Text">Injected Text</a> section.</p>
-<h3 id="storys-authors-note">Story's Author's Note</h3>
-<p>Injects this text three newlines from the bottom of the context.
-Helpful for immediate instructions for the AI, which gives direction to
-the AI's generations. More information on how to use this can be found
-in the <a href="Context.html#injected-text">Injected Text</a>
-section.</p>
-<h3 id="lorebook-quick-access">Lorebook Quick Access</h3>
-<p>Enter an entry's name to find it quickly, or click the 📗 icon to
-open the Lorebook window.</p>
-<h3 id="story-stats">Story Stats</h3>
-<p><img
-src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/6bdc6e93-1298-4dff-bb1c-dd38bc440f15"
-alt="image" /></p>
-<p>The <em>Story Stats</em> menu allows you to consult several metrics
-such as the number of text characters, your use of retries, the size of
-your retry branches, etc. You may also prune your story in several ways
-in order to decrease its filesize.</p>
-<ul>
-<li><strong>Trim Story</strong>: Deletes all <em>redo steps</em>,
-leaving only the current path. You will not able to navigate the
-<em>Redo Tree</em> anymore, but the filesize of your story will be
-reduced.</li>
-<li><strong>Flatten Story</strong>: More aggressive version of
-<em>Trimming.</em> Deletes all <strong>Undo</strong> steps and branches,
-leaving you with a single block of text.</li>
-<li><strong>Reset to Prompt</strong>: Reverts your story back to the
-initial prompt it was started with, deleting everything else.</li>
-</ul>
-<h3 id="exporting-the-story">Exporting the Story</h3>
-<p>You may export the story as:</p>
-<ul>
-<li><p>A <strong>Story file</strong>, which includes all branches and
-retries, and can be large if you haven't trimmed it first!</p></li>
-<li><p>A <strong>Scenario file</strong>, which is flattened and ready to
-be imported with placeholders, if applicable.</p></li>
-<li><p>A <strong>Plaintext file</strong> so it can simply be read on
-most devices.</p></li>
-<li><p><strong>Copy the entire .story file to the clipboard</strong>,
-which can cause lag, this is a lot of data!</p></li>
-<li><p>A <strong>Screenshot</strong> which can be customized to provide
-a showcase of NovelAI's abilities.</p></li>
-</ul>
-<h3 id="screenshot-designer">Screenshot Designer</h3>
-<p><img
-src="https://github.com/TapwaveZodiac/novelaiUKB/assets/35267604/a8b9b93a-d9db-4902-859e-07e0cd4ab790"
-alt="image" /></p>
-<p>The Screenshot Designer allows you to take a screenshot of the
-<strong>entire selected story text</strong>, and format it into a neat
-image that you can share freely.</p>
-<p>The toggles do the following:</p>
-<ul>
-<li>Show Title: Shows the title of the story, along with "AN EXCERPT
-FROM"</li>
-<li>Show Date: Show the date of the screenshot's creation.</li>
-<li>Show Pen Name: Shows "by" followed by the pen name you have chosen
-in your settings.</li>
-<li>Show NAI Logo: Shows the NovelAI logo and the site URL at the
-bottom.</li>
-<li>Show Show Color Highlighting: Indicates the source of all tokens in
-the image according to your theme colors.</li>
-<li>Show AI Model: Shows "Written Alongside" with the name and portrait
-of the selected model.</li>
-<li>Show Background: Shows some background vector art.</li>
-<li>Show Comment: If comments are present, they are displayed.</li>
-</ul>
-<p>You can select the font size, the width of the picture in pixels, as
-well as if you'd like to use NovelAI's default dark or light theme, or
-the one currently in use.</p>
+<h2 id="building-attribute-entries">Building Attribute entries</h2>
+<p>An Attributes entry is assembled from three elements:</p>
+<p>• <strong>Separators</strong>, usually four dashes (----),
+<strong>followed by a line break</strong>, are positioned at the
+beginning and end of the entry to signal that it contains "data" as
+opposed to story. The final entry does not need one, as you'll likely
+have a dinkus around there instead.</p>
+<p>• <strong>Title</strong> and, optionally, <strong>a short
+description</strong>, immediately after the starting separator. All
+entries must start with the name of the element. Optionally, you can add
+a very simple description. e.g
+<code>Shadowheart, follower of Shar</code></p>
+<p>• <strong>Attributes</strong>, which are a <em>header</em>, followed
+by a <em>colon</em> (:), and one or multiple sentences. A single
+attribute is a <strong>single paragraph</strong>, with each attribute
+starting on a new line. Attribute titles can be one word, multiple
+words, or words with an additional adjective, e.g
+<code>Beliefs (hidden):</code>,; <code>Skills (mastered):</code>,
+<code>Spells (ready):</code>.</p>
+<h3 id="ordering-attributes">Ordering Attributes</h3>
+<p>Attributes can be in any order, as long as you keep it consistent
+between entries of the same type. However, some entries are notable
+exceptions.</p>
+<p>Positioned at the <strong>beginning</strong> of the entry,
+immediately after the title, should be:</p>
+<p>• <code>AKA:</code> which provides alternate names for the element.
+This is also where alternate Lorebook <strong>keys</strong> should be
+specified.</p>
+<p>• <code>Type:</code> which specifies what type of element it is. (e.g
+person, place, faction; just like in the Lore Generator's categories,
+but you can improvise.)</p>
+<p>• <code>Setting:</code> which specifies which setting the element is
+from, in case you are doing a crossover story, or want to specify the
+tone of the entry.</p>
+<p>Positioned at the <strong>end</strong> of the entry, before the
+closing separator, should be:</p>
+<p>• <code>Summary:</code> which provides a short blurb about the
+entry.</p>
+<p>• <code>Quote:</code> which gives example dialogue for elements that
+speak, multiple can be provided.</p>
+<p>• A prose block can be added at the very end of the entry as well, if
+you feel further detail is needed.</p>
+<h3 id="writing-attributes">Writing Attributes</h3>
+<p>Attributes can be written in any style you like, though it is
+important to focus on making your entries <strong>stylistically
+consistent</strong>, as well as <strong>containing clear, easily
+understood information</strong>. Its purpose is to influence
+generations, so make sure you convey your ideas in a way that the model
+can understand.</p>
+<p>As a default, write attributes as <strong>a list of individual
+words</strong> separated by <strong>commas</strong>, with the intent of
+conjuring the correct "vibe" for that attribute. More verbose entries
+can lead to more verbose prose in response, but this will impact your
+token budget.</p>
+<p>For convenience, you can set up a blank entry that has no keys and
+only contains the starting separator and headers you frequently use.
+<strong>It is not necessary to put in an ending separator</strong>, as
+it will automatically be included when multiple entries are present
+back-to-back. Once done, you can duplicate and fill the entry as you
+create new elements.</p>
+<h1 id="attributes-entry-example">Attributes Entry Example</h1>
+<h2 id="level-i---basic-attributes">Level I - Basic Attributes</h2>
+<p>Let us start with an entry that only has the bare minimum information
+needed. We will add to it gradually as we go through examples. For now,
+we will just have a generic protagonist.</p>
+<pre><code>----
+Parker, author avatar
+Gender: Male
+Age: Adult
+Appearance: brown hair, stubble, toned build</code></pre>
+<p>This should be enough to describe a character. Most background
+characters can make do with this much. If you need something more
+advanced...</p>
+<h2 id="level-ii---personality">Level II - Personality</h2>
+<p>Perhaps we want this character to act in a specific way. Let's do
+this through their personality. Why not give them a job, and a goal to
+strive for as well?</p>
+<pre><code>----
+Parker, author avatar
+Gender: Male
+Age: Adult
+Appearance: brown hair, stubble, toned build
+Personality: creative, sassy, audacious, hard-working
+Occupation: writer
+Goals: Write 10 best-sellers.</code></pre>
+<p>Of course we can always push this further if needed.</p>
+<h2 id="level-iii---reputation-and-factions">Level III - Reputation and
+Factions</h2>
+<p>Let's say our writer is a bit of a celebrity, and is a major figure
+for a group that also enjoys some positive reputation.</p>
+<pre><code>----
+Parker, author avatar
+Gender: Male
+Age: Adult
+Appearance: brown hair, stubble, toned build
+Personality: creative, sassy, audacious, hard-working
+Occupation: writer
+Group: Powerful Prose Creatives (a well-respected online publisher)
+Rank: Founder
+Reputation: known for his popular saucy novels, translated in 20 languages.
+Goals: Write 10 best-sellers.</code></pre>
+<p>Want to push this further? There is a lot more that can be said.</p>
+<h2 id="level-iv---preferences-and-relations">Level IV - Preferences and
+Relations</h2>
+<p>Let's give Parker a bit of depth by detailing the people around him,
+and what he enjoys (and dislikes) in life.</p>
+<pre><code>----
+Parker, author avatar
+Gender: Male
+Age: Adult
+Appearance: brown hair, stubble, toned build
+Personality: creative, sassy, audacious, hard-working
+Likes: his typewriter, challenging himself
+Dislikes: ink stains, boring prose
+Occupation: writer
+Group: Powerful Prose Creatives (a well-respected online publisher)
+Rank: Founder
+Reputation: known for his popular saucy novels, translated in 20 languages.
+Goals: Write 10 best-sellers.
+Friends: Nigel, Armand
+Family: a wife (Jennifer), two daughters (Clara, Diane)</code></pre>
+<p>At this point, you should be feeling pretty confident. Remember that
+<strong>basically any header works</strong>, as long as it makes sense
+and the description fits what you chose.</p>
 <hr />
+<h1 id="advanced-examples">Advanced Examples</h1>
+<h2 id="advanced---full-fantasy-character-entry">Advanced - Full Fantasy
+Character Entry</h2>
+<p>Let's change gears and design a character for an existing Fantasy
+setting. Here, we will be using different headers to present someone
+that belongs to a role-playing game setting.</p>
+<pre><code>----
+Yanelie, elven adventuress
+AKA: Yana
+Type: Character
+Gender: Female
+Species: High Elf
+Setting: The Elder Scrolls 
+Age: Adult
+Appearance: long blonde hair, teal eyes, pale skin, slender build
+Personality: brave, perceptive, prudent
+Flaws: overzealous, introverted
+Class: Ranger
+Equipment: longbow, leather armor
+Abilities: low-level magic, speak with animals
+Skills: trapping, mapping, hunting
+Group: Adventurers&#39; Guild
+Rank: Journeyman</code></pre>
+<p>Note the addition of the new fields, such as
+<strong>setting</strong>, <strong>flaws</strong>, and the <strong>class,
+equipment, abilities and skills</strong>. Of course, you can use
+anything you feel is tonally appropriate.</p>
+<h2 id="advanced---space-politician">Advanced - Space Politician</h2>
+<p>For this one, we'll focus on advanced characterization.</p>
+<pre><code>----
+Senator Wyll&#39;kll, representative at the cosmic congress
+AKA: Senator Will-Kill
+Type: Person
+Setting: science fiction
+Gender: Male
+Species: Pfhor
+Personality: Loud-spoken, sensationalist, impressionable
+Mind: anxious, success-obsessed, overcomitted
+Fears: losing their election
+Opinion on Gulbaks: strongly negative
+Opinion on Pfhor: strongly positive
+Opinion on his constituents: indifferent
+Political beliefs: immigration restriction, tax cuts
+Background: Pretends to be a &quot;grassroots&quot; activist, in reality heir to a large fortune</code></pre>
+<p>Note the addition of <strong>Mind</strong>, which can be used to
+signal traits that are not made apparent. We also have complex
+<strong>Opinion and Beliefs</strong> fields, as well as a
+<strong>background</strong> and <strong>fears.</strong></p>
+<h2 id="advanced---nation-state">Advanced - Nation-state</h2>
+<p>Let's define something that is not a character: A full-on nation,
+with all of its specifics. For this, we will need very different tags,
+but it's fine!</p>
+<pre><code>----
+Nation of Freehold
+Type: Place
+Setting: Low Fantasy
+Leader: President Wilhelm Sterner
+Government: Constitutional Republic
+Religions: Agnostic (majority), Cleridan faith
+Capital: Liberty
+Population: Low Millions
+Geography: mountainous terrain, thick woods
+Climate: Windy, cool temperatures, humid
+Size: Moderate
+Borders: Antwell (North), Synescape (South), Auldwyld (West), Eridanic Ocean (East)
+Produces: ore and metals, honey, shipbuilding timber</code></pre>
+<p>There is a lot more you can specify. Fauna and Flora, commercial and
+diplomatic ties, and much more. Remember - only specify what is relevant
+to you, as these details could be brought up at any time.</p>
+<h2 id="advanced---legendary-artifact">Advanced - Legendary
+Artifact</h2>
+<p>Let's conclude with a Magic Sword, of course. This way, we can also
+experiment with inanimate items.</p>
+<pre><code>----
+Laevateinn
+Type: Object (Sword)
+Appearance: rusted longsword, black hilt, on fire (permanent)
+Weight: light
+Magic: When swung, produces massive waves of fire. Cannot be extinguished.
+Curse: exhausts users and surrounding allies (when wielded), inescapable flames (on hit)
+Reputation: ancient legend, easily identified
+Backstory: sword wielded by ancient hero, thrown into a volcano</code></pre>
+<p>You can describe any type of item, not just magic weapons, of course.
+Fields such as <strong>Function</strong> or <strong>Use</strong> and
+many more can be creatively wielded to define all sorts of fun
+tools!</p>
 
 <!-- Javascript added by toc-css.lua to make TOC expandable on click -->
 <script>
