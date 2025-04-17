@@ -32,7 +32,7 @@ $(BUILD_DIR)/en/%.html: $(SRC_DIR_EN)/%.md | build_dir
 
 # Build the Japanese version
 $(BUILD_DIR)/jp/%.html: $(SRC_DIR_JP)/%.md | build_dir
-	$(eval FILENAME := $(patsubst $(SRC_DIR_EN)/%.md,%,$<))
+	$(eval FILENAME := $(patsubst $(SRC_DIR_JP)/%.md,%,$<))
 
 	$(COMMAND) $(ARGS) \
 	--metadata title="$(subst -, ,$(FILENAME))" \

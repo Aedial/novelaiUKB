@@ -1,8 +1,8 @@
 function convert_timestamp(meta)
   local timestamp = meta.date
 
-  if type(timestamp) == "string" then
-    meta.date = "No date available"
+  if timestamp == "" then
+    meta.date = "No available release date"
   else
     local day = os.date("%d/%m/%Y", timestamp)
     local hour = os.date("%H:%M", timestamp)
